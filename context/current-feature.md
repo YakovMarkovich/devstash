@@ -4,22 +4,15 @@
 
 <!-- Not Started|In Progress|Completed -->
 
-In Progress
+Completed
 
 ## Goals
 
-Dashboard UI Phase 3 — main content area
-
-- 4 stats cards at the top (total items, collections, favorite items, favorite collections)
-- Recent collections section
-- Pinned items section
-- 10 most recent items section
-- Use mock data from `src/lib/mock-data.js` directly (no database yet)
+<!-- Goals & requirements -->
 
 ## Notes
 
-Reference: `context/features/dashboard-phase-3-spec.md`
-Screenshot: `context/screenshots/dashboard-ui-main.png`
+<!-- Any extra notes -->
 
 ## History
 
@@ -28,3 +21,4 @@ Screenshot: `context/screenshots/dashboard-ui-main.png`
 - **2026-05-22** — Initial Next.js + Tailwind CSS setup
 - **2026-05-22** — Dashboard UI Phase 1: ShadCN setup, /dashboard route, dark mode, TopBar with DevStash logo, sidebar/main placeholders
 - **2026-05-22** — Dashboard UI Phase 2: Collapsible sidebar with Types navigation (links to /items/TYPE), favorite collections, most recent collections, user avatar area, drawer toggle in TopBar, mobile overlay drawer
+- **2026-05-22** — Dashboard UI Phase 3: Main content area with 4 stats cards, collections grid, pinned items section, and 10 recent items section using mock data
