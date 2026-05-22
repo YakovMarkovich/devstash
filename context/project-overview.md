@@ -8,15 +8,15 @@
 
 Developers keep their essentials scattered across too many tools:
 
-| Asset | Usually lives in |
-|---|---|
-| 🧩 Code snippets | VS Code, Notion |
-| 🤖 AI prompts | ChatGPT / Claude chats |
-| 📄 Context files | Buried in project folders |
-| 🔗 Useful links | Browser bookmarks |
-| 📚 Docs | Random folders |
+| Asset                | Usually lives in           |
+| -------------------- | -------------------------- |
+| 🧩 Code snippets     | VS Code, Notion            |
+| 🤖 AI prompts        | ChatGPT / Claude chats     |
+| 📄 Context files     | Buried in project folders  |
+| 🔗 Useful links      | Browser bookmarks          |
+| 📚 Docs              | Random folders             |
 | ⌨️ Terminal commands | `.txt` files, bash history |
-| 🗂️ Templates | GitHub gists |
+| 🗂️ Templates         | GitHub gists               |
 
 The result: **context switching, lost knowledge, and inconsistent workflows.**
 
@@ -26,12 +26,12 @@ The result: **context switching, lost knowledge, and inconsistent workflows.**
 
 ## 2. Target Users
 
-| Persona | Primary Need |
-|---|---|
-| **Everyday Developer** | Fast access to snippets, prompts, commands, links |
-| **AI-first Developer** | Saves prompts, contexts, workflows, system messages |
-| **Content Creator / Educator** | Stores code blocks, explanations, course notes |
-| **Full-stack Builder** | Collects patterns, boilerplates, API examples |
+| Persona                        | Primary Need                                        |
+| ------------------------------ | --------------------------------------------------- |
+| **Everyday Developer**         | Fast access to snippets, prompts, commands, links   |
+| **AI-first Developer**         | Saves prompts, contexts, workflows, system messages |
+| **Content Creator / Educator** | Stores code blocks, explanations, course notes      |
+| **Full-stack Builder**         | Collects patterns, boilerplates, API examples       |
 
 ---
 
@@ -41,17 +41,18 @@ The result: **context switching, lost knowledge, and inconsistent workflows.**
 
 Every piece of stored content is an **Item** belonging to a **Type**. Users can create custom types later, but the system ships with these built-ins:
 
-| Type | Content | Color | Icon (Lucide) | Free Tier |
-|---|---|---|---|---|
-| Snippet | text | `#3b82f6` 🔵 | `Code` | ✅ |
-| Prompt | text | `#8b5cf6` 🟣 | `Sparkles` | ✅ |
-| Command | text | `#f97316` 🟠 | `Terminal` | ✅ |
-| Note | text | `#fde047` 🟡 | `StickyNote` | ✅ |
-| Link | url | `#10b981` 🟢 | `Link` | ✅ |
-| File | file | `#6b7280` ⚫ | `File` | 💎 Pro |
-| Image | file | `#ec4899` 🩷 | `Image` | 💎 Pro |
+| Type    | Content | Color        | Icon (Lucide) | Free Tier |
+| ------- | ------- | ------------ | ------------- | --------- |
+| Snippet | text    | `#3b82f6` 🔵 | `Code`        | ✅        |
+| Prompt  | text    | `#8b5cf6` 🟣 | `Sparkles`    | ✅        |
+| Command | text    | `#f97316` 🟠 | `Terminal`    | ✅        |
+| Note    | text    | `#fde047` 🟡 | `StickyNote`  | ✅        |
+| Link    | url     | `#10b981` 🟢 | `Link`        | ✅        |
+| File    | file    | `#6b7280` ⚫ | `File`        | 💎 Pro    |
+| Image   | file    | `#ec4899` 🩷 | `Image`       | 💎 Pro    |
 
 **Behaviors**
+
 - Items open in a **quick-access drawer** for fast view/edit
 - URL pattern: `/items/snippets`, `/items/prompts`, etc.
 - Markdown editor for text types
@@ -63,16 +64,18 @@ Every piece of stored content is an **Item** belonging to a **Type**. Users can 
 Groupings of items. An item can belong to **multiple collections** (many-to-many via join table).
 
 Examples:
-- *React Patterns* — snippets + notes
-- *Context Files* — files
-- *Python Snippets* — snippets
-- *Interview Prep* — mixed
+
+- _React Patterns_ — snippets + notes
+- _Context Files_ — files
+- _Python Snippets_ — snippets
+- _Interview Prep_ — mixed
 
 Each collection has a `defaultTypeId` so a new empty collection knows what color to render as.
 
 ### C. Search
 
 Powerful search across:
+
 - Content
 - Tags
 - Titles
@@ -81,6 +84,7 @@ Powerful search across:
 ### D. Authentication
 
 Powered by **NextAuth v5**:
+
 - Email + password
 - GitHub OAuth
 
@@ -91,13 +95,14 @@ Powered by **NextAuth v5**:
 - 🕓 Recently used
 - 📥 Import code from a file
 - ✍️ Markdown editor (text types)
-- 📤 Export data (JSON / ZIP) — *Pro*
+- 📤 Export data (JSON / ZIP) — _Pro_
 - 🌙 Dark mode (default), light mode optional
 - 🔗 View which collections an item belongs to, add/remove on the fly
 
 ### F. AI Features (Pro)
 
 Powered by **OpenAI `gpt-5-nano`**:
+
 - 🏷️ Auto-tag suggestions
 - 📝 Summaries
 - 💡 "Explain This Code"
@@ -301,18 +306,18 @@ model Tag {
 
 ## 5. Tech Stack
 
-| Layer | Choice | Notes |
-|---|---|---|
-| Framework | **Next.js 16 / React 19** | SSR + API routes, single repo |
-| Language | **TypeScript** | Strict mode |
-| Database | **Neon Postgres** | Serverless Postgres |
-| ORM | **Prisma 7** | Always fetch latest docs |
-| Auth | **NextAuth v5** | Email/password + GitHub |
-| File Storage | **Cloudflare R2** | For Pro file/image uploads |
-| Caching | **Redis** (maybe) | Defer until needed |
-| AI | **OpenAI `gpt-5-nano`** | All AI features |
-| Styling | **Tailwind CSS v4** + **ShadCN UI** | |
-| Payments | **Stripe** | Subscriptions (monthly / yearly) |
+| Layer        | Choice                              | Notes                            |
+| ------------ | ----------------------------------- | -------------------------------- |
+| Framework    | **Next.js 16 / React 19**           | SSR + API routes, single repo    |
+| Language     | **TypeScript**                      | Strict mode                      |
+| Database     | **Neon Postgres**                   | Serverless Postgres              |
+| ORM          | **Prisma 7**                        | Always fetch latest docs         |
+| Auth         | **NextAuth v5**                     | Email/password + GitHub          |
+| File Storage | **Cloudflare R2**                   | For Pro file/image uploads       |
+| Caching      | **Redis** (maybe)                   | Defer until needed               |
+| AI           | **OpenAI `gpt-5-nano`**             | All AI features                  |
+| Styling      | **Tailwind CSS v4** + **ShadCN UI** |                                  |
+| Payments     | **Stripe**                          | Subscriptions (monthly / yearly) |
 
 ---
 
@@ -321,6 +326,7 @@ model Tag {
 Freemium model. **During development, all features are unlocked for all users** — gate them behind `user.isPro` once we go live.
 
 ### Free Tier
+
 - 50 items total
 - 3 collections
 - All system types **except** files & images
@@ -328,10 +334,11 @@ Freemium model. **During development, all features are unlocked for all users** 
 - ❌ No file/image upload
 - ❌ No AI features
 
-### Pro Tier — **$8/month** or **$72/year** *(save $24)*
+### Pro Tier — **$8/month** or **$72/year** _(save $24)_
+
 - Unlimited items & collections
 - File & image uploads
-- Custom item types *(later)*
+- Custom item types _(later)_
 - AI auto-tagging, code explanation, prompt optimizer
 - Export data (JSON / ZIP)
 - Priority support
@@ -341,12 +348,21 @@ Freemium model. **During development, all features are unlocked for all users** 
 ## 7. UI / UX
 
 ### Design Principles
+
 - Modern, minimal, **developer-focused**
 - Dark mode by default; light mode optional
 - Clean typography, generous whitespace
 - Subtle borders and shadows
 - **References:** Notion · Linear · Raycast
 - Syntax highlighting on every code block
+
+### Screenshots
+
+Refer to the screenshots below as a base for dashboard UI.
+It does not have to be exact. Use it as a reference.
+
+- @context/screenshots/dashboard-ui-drawer.png
+- @context/screenshots/dashboard-ui-main.png
 
 ### Layout
 
@@ -379,10 +395,12 @@ Freemium model. **During development, all features are unlocked for all users** 
 - **Drawer:** Items open in a quick-access drawer rather than a full page
 
 ### Responsive
+
 - Desktop-first, mobile-usable
 - Sidebar collapses to a drawer on mobile
 
 ### Micro-interactions
+
 - Smooth transitions
 - Hover states on cards
 - Toast notifications for actions
@@ -392,15 +410,15 @@ Freemium model. **During development, all features are unlocked for all users** 
 
 ## 8. Key URL Patterns
 
-| Path | Purpose |
-|---|---|
-| `/` | Dashboard (collections + recent items) |
-| `/items/[type]` | All items of a given type (e.g. `/items/snippets`) |
-| `/collections` | All collections |
-| `/collections/[id]` | Single collection view |
-| `/search` | Global search |
-| `/settings` | Account, billing, preferences |
-| `/api/...` | API routes (items, uploads, AI, Stripe webhooks) |
+| Path                | Purpose                                            |
+| ------------------- | -------------------------------------------------- |
+| `/`                 | Dashboard (collections + recent items)             |
+| `/items/[type]`     | All items of a given type (e.g. `/items/snippets`) |
+| `/collections`      | All collections                                    |
+| `/collections/[id]` | Single collection view                             |
+| `/search`           | Global search                                      |
+| `/settings`         | Account, billing, preferences                      |
+| `/api/...`          | API routes (items, uploads, AI, Stripe webhooks)   |
 
 ---
 
@@ -413,4 +431,4 @@ Freemium model. **During development, all features are unlocked for all users** 
 
 ---
 
-*Last updated: May 2026*
+_Last updated: May 2026_
