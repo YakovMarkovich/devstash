@@ -1,12 +1,10 @@
 # Current Feature
 
-<!-- Feature Name and short description -->
-
 ## Status
 
 <!-- Not Started|In Progress|Completed -->
 
-Not Started
+Completed
 
 ## Goals
 
@@ -22,3 +20,4 @@ Not Started
 
 - **2026-05-22** — Initial Next.js + Tailwind CSS setup
 - **2026-05-22** — Dashboard UI Phase 1: ShadCN setup, /dashboard route, dark mode, TopBar with DevStash logo, sidebar/main placeholders
+- **2026-05-22** — Dashboard UI Phase 2: Collapsible sidebar with Types navigation (links to /items/TYPE), favorite collections, most recent collections, user avatar area, drawer toggle in TopBar, mobile overlay drawer
