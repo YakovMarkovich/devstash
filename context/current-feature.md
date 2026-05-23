@@ -2,30 +2,17 @@
 
 ## Feature
 
-Stats & Sidebar
-
 ## Status
 
 <!-- Not Started|In Progress|Completed -->
-
-Completed
 
 ## Goals
 
 <!-- Goals & requirements -->
 
-- Display stats from database data, keeping the current design/layout
-- Display item types in sidebar with their icons, linking to `/items/[typename]`
-- Add "View all collections" link under the collections list that goes to `/collections`
-- Keep star icons for favorite collections; for recents, show a colored circle based on the most-used item type in that collection
-- Create `src/lib/db/items.ts` and add the database functions (use `src/lib/db/collections.ts` for reference)
-
 ## Notes
 
 <!-- Any extra notes -->
-
-- Replace mock stats data with real data from Neon DB
-- Full spec in `@context/features/stats-sidebar-spec.md`
 
 ## History
 
@@ -40,3 +27,4 @@ Completed
 - **2026-05-23** — Dashboard Collections: created src/lib/db/collections.ts with getRecentCollections, getCollectionStats, getItemStats; updated CollectionCard to show dominant-type left border color and icons for all types present; dashboard page now fetches live data from Neon replacing mock collections
 - **2026-05-23** — Dashboard Items: created src/lib/db/items.ts with getPinnedItems and getRecentItems; updated ItemCard to accept itemType directly (removed mock-data dependency) and added item type color badge alongside tags; updated dashboard page to fetch pinned and recent items from Neon; pinned section hidden when no pinned items; updated seed to support isPinned/isFavorite flags and pinned two items (Custom Hooks, Code Review Prompt)
 - **2026-05-23** — Stats & Sidebar: added `getItemTypes` (with custom display order) and `getSidebarCollections` (with `dominantTypeColor` and `itemCount`) to db layer; updated Sidebar to accept live data as props (removed mock-data dependency), show real item types with counts and correct order, favorite collections with star icons, recent collections with colored circle + item count, and a "View all collections" link; updated seed to support `isFavorite` on collections and marked React Patterns and AI Workflows as favorites
+- **2026-05-23** — Add Pro Badge to Sidebar: added ShadCN Badge component; File and Image item types in the sidebar now display a subtle secondary-variant "PRO" badge instead of an item count
