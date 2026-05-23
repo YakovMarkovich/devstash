@@ -78,17 +78,25 @@ async function main() {
   async function createCollection(
     name: string,
     description: string,
-    defaultTypeName: string
+    defaultTypeName: string,
+    extra: { isFavorite?: boolean } = {}
   ) {
     const existing = await prisma.collection.findFirst({
       where: { name, userId: user.id },
     });
-    return existing ?? await prisma.collection.create({
+    if (existing) {
+      return prisma.collection.update({
+        where: { id: existing.id },
+        data: { isFavorite: extra.isFavorite ?? false },
+      });
+    }
+    return prisma.collection.create({
       data: {
         name,
         description,
         userId: user.id,
         defaultTypeId: itemTypes[defaultTypeName],
+        isFavorite: extra.isFavorite ?? false,
       },
     });
   }
@@ -134,7 +142,8 @@ async function main() {
   const reactPatterns = await createCollection(
     "React Patterns",
     "Reusable React patterns and hooks",
-    "snippet"
+    "snippet",
+    { isFavorite: true }
   );
 
   const hookSnippet = await createItem(
@@ -251,7 +260,8 @@ export const sleep = (ms: number) => new Promise((res) => setTimeout(res, ms));`
   const aiWorkflows = await createCollection(
     "AI Workflows",
     "AI prompts and workflow automations",
-    "prompt"
+    "prompt",
+    { isFavorite: true }
   );
 
   const codeReviewPrompt = await createItem(
