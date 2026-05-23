@@ -3,21 +3,23 @@ import { Sidebar } from '@/components/dashboard/Sidebar';
 import { StatsCards } from '@/components/dashboard/StatsCards';
 import { CollectionCard } from '@/components/dashboard/CollectionCard';
 import { ItemCard } from '@/components/dashboard/ItemCard';
-import { getRecentCollections, getCollectionStats, getItemStats } from '@/lib/db/collections';
-import { getPinnedItems, getRecentItems } from '@/lib/db/items';
+import { getRecentCollections, getCollectionStats, getItemStats, getSidebarCollections } from '@/lib/db/collections';
+import { getPinnedItems, getRecentItems, getItemTypes } from '@/lib/db/items';
 
 export default async function DashboardPage() {
-  const [recentCollections, collectionStats, itemStats, pinnedItems, recentItems] = await Promise.all([
+  const [recentCollections, collectionStats, itemStats, pinnedItems, recentItems, itemTypes, sidebarCollections] = await Promise.all([
     getRecentCollections(6),
     getCollectionStats(),
     getItemStats(),
     getPinnedItems(),
     getRecentItems(10),
+    getItemTypes(),
+    getSidebarCollections(),
   ]);
 
   return (
     <>
-      <Sidebar />
+      <Sidebar itemTypes={itemTypes} sidebarCollections={sidebarCollections} />
       <main className="flex-1 p-6 overflow-auto">
         <div className="max-w-5xl mx-auto space-y-8">
           <div>

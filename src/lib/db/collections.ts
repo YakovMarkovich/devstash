@@ -73,6 +73,53 @@ export async function getCollectionStats() {
   return { totalCollections, favoriteCollections };
 }
 
+export interface SidebarCollection {
+  id: string;
+  name: string;
+  isFavorite: boolean;
+  itemCount: number;
+  dominantTypeColor: string | null;
+}
+
+export async function getSidebarCollections(): Promise<SidebarCollection[]> {
+  const collections = await prisma.collection.findMany({
+    orderBy: [{ isFavorite: 'desc' }, { updatedAt: 'desc' }],
+    include: {
+      items: {
+        include: {
+          item: {
+            include: { itemType: { select: { color: true } } },
+          },
+        },
+      },
+    },
+  });
+
+  return collections.map((col) => {
+    let dominantTypeColor: string | null = null;
+
+    if (!col.isFavorite) {
+      const typeCounts = new Map<string, { color: string; count: number }>();
+      for (const ic of col.items) {
+        const { color } = ic.item.itemType;
+        const entry = typeCounts.get(color);
+        if (entry) entry.count++;
+        else typeCounts.set(color, { color, count: 1 });
+      }
+      const sorted = [...typeCounts.values()].sort((a, b) => b.count - a.count);
+      dominantTypeColor = sorted[0]?.color ?? null;
+    }
+
+    return {
+      id: col.id,
+      name: col.name,
+      isFavorite: col.isFavorite,
+      itemCount: col.items.length,
+      dominantTypeColor,
+    };
+  });
+}
+
 export async function getItemStats() {
   const [totalItems, favoriteItems] = await Promise.all([
     prisma.item.count(),
