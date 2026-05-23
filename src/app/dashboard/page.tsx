@@ -3,22 +3,17 @@ import { Sidebar } from '@/components/dashboard/Sidebar';
 import { StatsCards } from '@/components/dashboard/StatsCards';
 import { CollectionCard } from '@/components/dashboard/CollectionCard';
 import { ItemCard } from '@/components/dashboard/ItemCard';
-import { mockItems, mockItemCounts } from '@/lib/mock-data';
 import { getRecentCollections, getCollectionStats, getItemStats } from '@/lib/db/collections';
-
-const pinnedItems = mockItems.filter((i) => i.isPinned);
-const recentItems = [...mockItems]
-  .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())
-  .slice(0, 10);
+import { getPinnedItems, getRecentItems } from '@/lib/db/items';
 
 export default async function DashboardPage() {
-  const [recentCollections, collectionStats, itemStats] = await Promise.all([
+  const [recentCollections, collectionStats, itemStats, pinnedItems, recentItems] = await Promise.all([
     getRecentCollections(6),
     getCollectionStats(),
     getItemStats(),
+    getPinnedItems(),
+    getRecentItems(10),
   ]);
-
-  const totalItems = itemStats.totalItems || Object.values(mockItemCounts).reduce((sum, n) => sum + n, 0);
 
   return (
     <>
@@ -31,7 +26,7 @@ export default async function DashboardPage() {
           </div>
 
           <StatsCards
-            totalItems={totalItems}
+            totalItems={itemStats.totalItems}
             totalCollections={collectionStats.totalCollections}
             favoriteItems={itemStats.favoriteItems}
             favoriteCollections={collectionStats.favoriteCollections}
