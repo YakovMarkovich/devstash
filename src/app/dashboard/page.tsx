@@ -3,24 +3,23 @@ import { Sidebar } from '@/components/dashboard/Sidebar';
 import { StatsCards } from '@/components/dashboard/StatsCards';
 import { CollectionCard } from '@/components/dashboard/CollectionCard';
 import { ItemCard } from '@/components/dashboard/ItemCard';
-import { mockCollections, mockItems, mockItemCounts } from '@/lib/mock-data';
-
-const totalItems = Object.values(mockItemCounts).reduce((sum, n) => sum + n, 0);
-const totalCollections = mockCollections.length;
-const favoriteItems = mockItems.filter((i) => i.isFavorite).length;
-const favoriteCollections = mockCollections.filter((c) => c.isFavorite).length;
-
-const recentCollections = [...mockCollections]
-  .sort((a, b) => b.updatedAt.getTime() - a.updatedAt.getTime())
-  .slice(0, 6);
+import { mockItems, mockItemCounts } from '@/lib/mock-data';
+import { getRecentCollections, getCollectionStats, getItemStats } from '@/lib/db/collections';
 
 const pinnedItems = mockItems.filter((i) => i.isPinned);
-
 const recentItems = [...mockItems]
   .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())
   .slice(0, 10);
 
-export default function DashboardPage() {
+export default async function DashboardPage() {
+  const [recentCollections, collectionStats, itemStats] = await Promise.all([
+    getRecentCollections(6),
+    getCollectionStats(),
+    getItemStats(),
+  ]);
+
+  const totalItems = itemStats.totalItems || Object.values(mockItemCounts).reduce((sum, n) => sum + n, 0);
+
   return (
     <>
       <Sidebar />
@@ -33,9 +32,9 @@ export default function DashboardPage() {
 
           <StatsCards
             totalItems={totalItems}
-            totalCollections={totalCollections}
-            favoriteItems={favoriteItems}
-            favoriteCollections={favoriteCollections}
+            totalCollections={collectionStats.totalCollections}
+            favoriteItems={itemStats.favoriteItems}
+            favoriteCollections={collectionStats.favoriteCollections}
           />
 
           <section>

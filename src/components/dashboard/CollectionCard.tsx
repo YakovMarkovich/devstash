@@ -10,7 +10,7 @@ import {
   Star,
   type LucideIcon,
 } from 'lucide-react';
-import { mockItemTypes } from '@/lib/mock-data';
+import type { CollectionWithTypes } from '@/lib/db/collections';
 
 const ICON_MAP: Record<string, LucideIcon> = {
   Code,
@@ -22,26 +22,19 @@ const ICON_MAP: Record<string, LucideIcon> = {
   Image: ImageIcon,
 };
 
-interface Collection {
-  id: string;
-  name: string;
-  description: string;
-  isFavorite: boolean;
-  defaultTypeId: string;
-  itemCount: number;
-}
-
 interface CollectionCardProps {
-  collection: Collection;
+  collection: CollectionWithTypes;
 }
 
 export function CollectionCard({ collection }: CollectionCardProps) {
-  const defaultType = mockItemTypes.find((t) => t.id === collection.defaultTypeId);
-  const Icon = defaultType ? ICON_MAP[defaultType.icon] : null;
+  const borderColor = collection.dominantType?.color ?? 'transparent';
 
   return (
     <Link href={`/collections/${collection.id}`} className="block group">
-      <div className="rounded-lg border border-border bg-card p-4 h-full hover:bg-accent/30 transition-colors">
+      <div
+        className="rounded-lg border border-border bg-card p-4 h-full hover:bg-accent/30 transition-colors"
+        style={{ borderLeftColor: borderColor, borderLeftWidth: 3 }}
+      >
         <div className="flex items-start justify-between mb-1">
           <h3 className="font-semibold text-sm truncate flex-1 pr-2">{collection.name}</h3>
           {collection.isFavorite && (
@@ -51,9 +44,12 @@ export function CollectionCard({ collection }: CollectionCardProps) {
         <p className="text-xs text-muted-foreground mb-2">{collection.itemCount} items</p>
         <p className="text-xs text-muted-foreground line-clamp-2 mb-4">{collection.description}</p>
         <div className="flex items-center gap-1.5">
-          {Icon && defaultType && (
-            <Icon className="h-3.5 w-3.5" style={{ color: defaultType.color }} />
-          )}
+          {collection.types.map((type) => {
+            const Icon = ICON_MAP[type.icon];
+            return Icon ? (
+              <Icon key={type.id} className="h-3.5 w-3.5" style={{ color: type.color }} />
+            ) : null;
+          })}
         </div>
       </div>
     </Link>

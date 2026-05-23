@@ -2,7 +2,7 @@
 
 ## Feature
 
-Seed Data
+Dashboard Collections
 
 ## Status
 
@@ -14,26 +14,21 @@ Completed
 
 <!-- Goals & requirements -->
 
-- Create `prisma/seed.ts` to populate the database with sample data
-- Seed a demo user: `demo@devstash.io`, password `12345678` (bcryptjs, 12 rounds), `isPro: false`
-- Seed all 7 system item types (snippet, prompt, command, note, file, image, link) with `isSystem: true`
-- Seed 5 collections with items as specified in `@context/features/seed-spec.md`:
-  - **React Patterns** — 3 snippets (TypeScript)
-  - **AI Workflows** — 3 prompts
-  - **DevOps** — 1 snippet, 1 command, 2 links (real URLs)
-  - **Terminal Commands** — 4 commands
-  - **Design Resources** — 4 links (real URLs)
-- Wire up seed script in `package.json` via `prisma.seed` config
-- Run seed against the Neon dev branch
+- Create `src/lib/db/collections.ts` with data fetching functions
+- Fetch collections directly in server component
+- Collection card border color derived from most-used content type in that collection
+- Show small icons of all types in that collection
+- Keep the current design (reference `@context/screenshots/dashboard-ui-main.png`)
+- Update collection stats display
+- Do not add items underneath yet
 
 ## Notes
 
 <!-- Any extra notes -->
 
-- Full data spec in `@context/features/seed-spec.md`
-- Use `bcryptjs` (not `bcrypt`) — no native bindings needed
-- Use `upsert` or `deleteMany` + `createMany` so the script is idempotent (safe to re-run)
-- Links must use real, publicly accessible URLs
+- Replace dummy collection data in the main dashboard area with real data from Neon DB via Prisma
+- Do not use `src/lib/mock-data.ts` for collections
+- Full spec in `@context/features/dashboard-collections-spec.md`
 
 ## History
 
@@ -45,3 +40,4 @@ Completed
 - **2026-05-22** — Dashboard UI Phase 3: Main content area with 4 stats cards, collections grid, pinned items section, and 10 recent items section using mock data
 - **2026-05-23** — Prisma 7 + Neon PostgreSQL setup: installed prisma@7 with PrismaPg driver adapter, full schema (User, Item, ItemType, Collection, ItemCollection, Tag, NextAuth models), prisma.config.ts loading .env.local, PrismaClient singleton at src/lib/prisma.ts, initial migration applied to Neon dev branch
 - **2026-05-23** — Seed data: prisma/seed.ts with demo user (demo@devstash.io), 7 system item types, 5 collections (React Patterns, AI Workflows, DevOps, Terminal Commands, Design Resources) with 17 items total; bcryptjs password hash; idempotent via findFirst+create; wired to package.json prisma.seed and db:seed script
+- **2026-05-23** — Dashboard Collections: created src/lib/db/collections.ts with getRecentCollections, getCollectionStats, getItemStats; updated CollectionCard to show dominant-type left border color and icons for all types present; dashboard page now fetches live data from Neon replacing mock collections
