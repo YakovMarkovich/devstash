@@ -102,6 +102,8 @@ async function main() {
       language?: string;
       url?: string;
       contentType?: "text" | "file";
+      isPinned?: boolean;
+      isFavorite?: boolean;
     } = {}
   ) {
     return prisma.item.create({
@@ -112,6 +114,8 @@ async function main() {
         url: extra.url,
         description: extra.description,
         language: extra.language,
+        isPinned: extra.isPinned ?? false,
+        isFavorite: extra.isFavorite ?? false,
         userId: user.id,
         itemTypeId: itemTypes[typeName],
       },
@@ -168,7 +172,7 @@ export function usePrevious<T>(value: T): T | undefined {
   useEffect(() => { ref.current = value; });
   return ref.current;
 }`,
-    { description: "useDebounce, useLocalStorage, usePrevious hooks", language: "typescript" }
+    { description: "useDebounce, useLocalStorage, usePrevious hooks", language: "typescript", isPinned: true, isFavorite: true }
   );
 
   const componentSnippet = await createItem(
@@ -270,7 +274,7 @@ Format your response as:
 \`\`\`
 [PASTE CODE HERE]
 \`\`\``,
-    { description: "Structured code review prompt for AI assistants" }
+    { description: "Structured code review prompt for AI assistants", isPinned: true }
   );
 
   const docGenPrompt = await createItem(
