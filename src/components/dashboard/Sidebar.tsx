@@ -20,6 +20,9 @@ import type { ItemTypeWithCount } from '@/lib/db/items';
 import type { SidebarCollection } from '@/lib/db/collections';
 import { useSidebar } from './SidebarContext';
 import { cn } from '@/lib/utils';
+import { Badge } from '@/components/ui/badge';
+
+const PRO_TYPES = new Set(['file', 'image']);
 
 const ICON_MAP: Record<string, LucideIcon> = {
   Code,
@@ -74,7 +77,11 @@ function SidebarContent({ itemTypes, sidebarCollections }: SidebarContentProps) 
                       <Icon className="h-4 w-4 shrink-0" style={{ color: type.color }} />
                     )}
                     <span className="flex-1 truncate capitalize">{type.name}</span>
-                    <span className="text-xs text-muted-foreground tabular-nums">{type.count}</span>
+                    {PRO_TYPES.has(type.name) ? (
+                      <Badge variant="secondary" className="text-[10px] px-1 py-0 h-4 shrink-0">PRO</Badge>
+                    ) : (
+                      <span className="text-xs text-muted-foreground tabular-nums">{type.count}</span>
+                    )}
                   </Link>
                 </li>
               );
