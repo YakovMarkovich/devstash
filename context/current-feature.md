@@ -2,7 +2,7 @@
 
 ## Feature
 
-Prisma + Neon PostgreSQL Setup
+Seed Data
 
 ## Status
 
@@ -14,20 +14,26 @@ Completed
 
 <!-- Goals & requirements -->
 
-- Install and configure Prisma 7 ORM
-- Connect to Neon PostgreSQL (serverless) via `DATABASE_URL`
-- Write initial Prisma schema based on the data models in `@context/project-overview.md`
-- Include NextAuth models: `Account`, `Session`, `VerificationToken`
-- Add appropriate indexes and cascade deletes as specified in the draft schema
-- Always use `prisma migrate dev` (never `db push`) — development branch in `DATABASE_URL`, production branch separate
+- Create `prisma/seed.ts` to populate the database with sample data
+- Seed a demo user: `demo@devstash.io`, password `12345678` (bcryptjs, 12 rounds), `isPro: false`
+- Seed all 7 system item types (snippet, prompt, command, note, file, image, link) with `isSystem: true`
+- Seed 5 collections with items as specified in `@context/features/seed-spec.md`:
+  - **React Patterns** — 3 snippets (TypeScript)
+  - **AI Workflows** — 3 prompts
+  - **DevOps** — 1 snippet, 1 command, 2 links (real URLs)
+  - **Terminal Commands** — 4 commands
+  - **Design Resources** — 4 links (real URLs)
+- Wire up seed script in `package.json` via `prisma.seed` config
+- Run seed against the Neon dev branch
 
 ## Notes
 
 <!-- Any extra notes -->
 
-- Prisma 7 has breaking changes — review the upgrade guide before implementing
-- Schema draft is in `@context/project-overview.md` (Section 4)
-- See `@context/features/database-spec.md` for full requirements
+- Full data spec in `@context/features/seed-spec.md`
+- Use `bcryptjs` (not `bcrypt`) — no native bindings needed
+- Use `upsert` or `deleteMany` + `createMany` so the script is idempotent (safe to re-run)
+- Links must use real, publicly accessible URLs
 
 ## History
 
@@ -38,3 +44,4 @@ Completed
 - **2026-05-22** — Dashboard UI Phase 2: Collapsible sidebar with Types navigation (links to /items/TYPE), favorite collections, most recent collections, user avatar area, drawer toggle in TopBar, mobile overlay drawer
 - **2026-05-22** — Dashboard UI Phase 3: Main content area with 4 stats cards, collections grid, pinned items section, and 10 recent items section using mock data
 - **2026-05-23** — Prisma 7 + Neon PostgreSQL setup: installed prisma@7 with PrismaPg driver adapter, full schema (User, Item, ItemType, Collection, ItemCollection, Tag, NextAuth models), prisma.config.ts loading .env.local, PrismaClient singleton at src/lib/prisma.ts, initial migration applied to Neon dev branch
+- **2026-05-23** — Seed data: prisma/seed.ts with demo user (demo@devstash.io), 7 system item types, 5 collections (React Patterns, AI Workflows, DevOps, Terminal Commands, Design Resources) with 17 items total; bcryptjs password hash; idempotent via findFirst+create; wired to package.json prisma.seed and db:seed script
