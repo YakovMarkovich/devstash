@@ -65,11 +65,12 @@ export async function getRecentCollections(limit = 6): Promise<CollectionWithTyp
 }
 
 export async function getCollectionStats() {
-  const [totalCollections, favoriteCollections] = await Promise.all([
-    prisma.collection.count(),
-    prisma.collection.count({ where: { isFavorite: true } }),
-  ]);
-
+  const groups = await prisma.collection.groupBy({
+    by: ['isFavorite'],
+    _count: { _all: true },
+  });
+  const totalCollections = groups.reduce((sum, g) => sum + g._count._all, 0);
+  const favoriteCollections = groups.find((g) => g.isFavorite)?._count._all ?? 0;
   return { totalCollections, favoriteCollections };
 }
 
@@ -96,19 +97,15 @@ export async function getSidebarCollections(): Promise<SidebarCollection[]> {
   });
 
   return collections.map((col) => {
-    let dominantTypeColor: string | null = null;
-
-    if (!col.isFavorite) {
-      const typeCounts = new Map<string, { color: string; count: number }>();
-      for (const ic of col.items) {
-        const { color } = ic.item.itemType;
-        const entry = typeCounts.get(color);
-        if (entry) entry.count++;
-        else typeCounts.set(color, { color, count: 1 });
-      }
-      const sorted = [...typeCounts.values()].sort((a, b) => b.count - a.count);
-      dominantTypeColor = sorted[0]?.color ?? null;
+    const typeCounts = new Map<string, { color: string; count: number }>();
+    for (const ic of col.items) {
+      const { color } = ic.item.itemType;
+      const entry = typeCounts.get(color);
+      if (entry) entry.count++;
+      else typeCounts.set(color, { color, count: 1 });
     }
+    const sorted = [...typeCounts.values()].sort((a, b) => b.count - a.count);
+    const dominantTypeColor = sorted[0]?.color ?? null;
 
     return {
       id: col.id,
@@ -121,10 +118,11 @@ export async function getSidebarCollections(): Promise<SidebarCollection[]> {
 }
 
 export async function getItemStats() {
-  const [totalItems, favoriteItems] = await Promise.all([
-    prisma.item.count(),
-    prisma.item.count({ where: { isFavorite: true } }),
-  ]);
-
+  const groups = await prisma.item.groupBy({
+    by: ['isFavorite'],
+    _count: { _all: true },
+  });
+  const totalItems = groups.reduce((sum, g) => sum + g._count._all, 0);
+  const favoriteItems = groups.find((g) => g.isFavorite)?._count._all ?? 0;
   return { totalItems, favoriteItems };
 }
