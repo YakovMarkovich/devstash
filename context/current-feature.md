@@ -2,17 +2,33 @@
 
 ## Feature
 
+Code Audit Quick Wins
+
 ## Status
 
-<!-- Not Started|In Progress|Completed -->
+Completed
 
 ## Goals
 
-<!-- Goals & requirements -->
+Fix low-risk issues surfaced by the code audit. Auth-scoped issues are excluded — they will be addressed when auth is implemented.
+
+1. **N+1 queries** — `getCollectionStats` and `getItemStats` each fire two separate `COUNT` queries (4 round-trips total for 4 numbers). Combine using Prisma's `aggregate` or `groupBy` — no raw SQL.
+
+2. **`ICON_MAP` duplication** — identical `Record<string, LucideIcon>` map is copy-pasted in `Sidebar.tsx`, `CollectionCard.tsx`, and `ItemCard.tsx`. Extract to `src/lib/icons.ts` with a `getTypeIcon(name)` helper.
+
+3. **`formatDate` in `ItemCard`** — locally defined utility that belongs in `src/lib/utils.ts` alongside `cn`.
+
+4. **Root route redirect** — `src/app/page.tsx` renders a bare `<h1>Devstash</h1>`. Should `redirect('/dashboard')`.
+
+5. **Favorite collections missing color** — `getSidebarCollections` skips the `dominantTypeColor` computation for favorite collections (`if (!col.isFavorite)` guard), so favorites always render without a color dot. Remove the guard.
+
+6. **Prisma schema missing `url` field** — `datasource db` has no `url = env("DATABASE_URL")` line, which breaks `prisma migrate` and `prisma studio` CLI commands.
 
 ## Notes
 
-<!-- Any extra notes -->
+- Do not touch any DB query `userId` scoping — that is intentionally deferred until auth is implemented.
+- Do not modify mock/seed data files.
+- N+1 fix must use Prisma conventions only (`aggregate`, `groupBy`) — no raw SQL.
 
 ## History
 
@@ -28,3 +44,4 @@
 - **2026-05-23** — Dashboard Items: created src/lib/db/items.ts with getPinnedItems and getRecentItems; updated ItemCard to accept itemType directly (removed mock-data dependency) and added item type color badge alongside tags; updated dashboard page to fetch pinned and recent items from Neon; pinned section hidden when no pinned items; updated seed to support isPinned/isFavorite flags and pinned two items (Custom Hooks, Code Review Prompt)
 - **2026-05-23** — Stats & Sidebar: added `getItemTypes` (with custom display order) and `getSidebarCollections` (with `dominantTypeColor` and `itemCount`) to db layer; updated Sidebar to accept live data as props (removed mock-data dependency), show real item types with counts and correct order, favorite collections with star icons, recent collections with colored circle + item count, and a "View all collections" link; updated seed to support `isFavorite` on collections and marked React Patterns and AI Workflows as favorites
 - **2026-05-23** — Add Pro Badge to Sidebar: added ShadCN Badge component; File and Image item types in the sidebar now display a subtle secondary-variant "PRO" badge instead of an item count
+- **2026-05-26** — Code Audit Quick Wins: replaced 4 COUNT queries with 2 Prisma groupBy calls in getCollectionStats/getItemStats; extracted shared ICON_MAP to src/lib/icons.ts with getTypeIcon helper (removed duplication from Sidebar, CollectionCard, ItemCard); moved formatDate to src/lib/utils.ts; root route now redirects to /dashboard; fixed getSidebarCollections to compute dominantTypeColor for favorite collections (removed isFavorite guard)

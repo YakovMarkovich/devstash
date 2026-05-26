@@ -1,26 +1,7 @@
 import Link from 'next/link';
-import {
-  Code,
-  Sparkles,
-  Terminal,
-  StickyNote,
-  Link as LinkIcon,
-  File,
-  Image as ImageIcon,
-  Star,
-  type LucideIcon,
-} from 'lucide-react';
+import { Star } from 'lucide-react';
 import type { CollectionWithTypes } from '@/lib/db/collections';
-
-const ICON_MAP: Record<string, LucideIcon> = {
-  Code,
-  Sparkles,
-  Terminal,
-  StickyNote,
-  Link: LinkIcon,
-  File,
-  Image: ImageIcon,
-};
+import { getTypeIcon } from '@/lib/icons';
 
 interface CollectionCardProps {
   collection: CollectionWithTypes;
@@ -45,7 +26,7 @@ export function CollectionCard({ collection }: CollectionCardProps) {
         <p className="text-xs text-muted-foreground line-clamp-2 mb-4">{collection.description}</p>
         <div className="flex items-center gap-1.5">
           {collection.types.map((type) => {
-            const Icon = ICON_MAP[type.icon];
+            const Icon = getTypeIcon(type.icon);
             return Icon ? (
               <Icon key={type.id} className="h-3.5 w-3.5" style={{ color: type.color }} />
             ) : null;

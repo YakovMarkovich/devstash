@@ -2,37 +2,20 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import {
-  Code,
-  Sparkles,
-  Terminal,
-  StickyNote,
-  Link as LinkIcon,
-  File,
-  Image as ImageIcon,
   ChevronDown,
   ChevronUp,
   Star,
   Settings,
   X,
-  type LucideIcon,
 } from 'lucide-react';
 import type { ItemTypeWithCount } from '@/lib/db/items';
 import type { SidebarCollection } from '@/lib/db/collections';
 import { useSidebar } from './SidebarContext';
 import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
+import { getTypeIcon } from '@/lib/icons';
 
 const PRO_TYPES = new Set(['file', 'image']);
-
-const ICON_MAP: Record<string, LucideIcon> = {
-  Code,
-  Sparkles,
-  Terminal,
-  StickyNote,
-  Link: LinkIcon,
-  File,
-  Image: ImageIcon,
-};
 
 function getTypeSlug(name: string) {
   return name.toLowerCase() + 's';
@@ -65,7 +48,7 @@ function SidebarContent({ itemTypes, sidebarCollections }: SidebarContentProps) 
         {typesOpen && (
           <ul className="mt-1 space-y-0.5">
             {itemTypes.map((type) => {
-              const Icon = ICON_MAP[type.icon];
+              const Icon = getTypeIcon(type.icon);
               const slug = getTypeSlug(type.name);
               return (
                 <li key={type.id}>
