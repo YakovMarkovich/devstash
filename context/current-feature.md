@@ -2,33 +2,17 @@
 
 ## Feature
 
-Code Audit Quick Wins
-
 ## Status
 
-Completed
+<!-- Not Started|In Progress|Completed -->
 
 ## Goals
 
-Fix low-risk issues surfaced by the code audit. Auth-scoped issues are excluded — they will be addressed when auth is implemented.
-
-1. **N+1 queries** — `getCollectionStats` and `getItemStats` each fire two separate `COUNT` queries (4 round-trips total for 4 numbers). Combine using Prisma's `aggregate` or `groupBy` — no raw SQL.
-
-2. **`ICON_MAP` duplication** — identical `Record<string, LucideIcon>` map is copy-pasted in `Sidebar.tsx`, `CollectionCard.tsx`, and `ItemCard.tsx`. Extract to `src/lib/icons.ts` with a `getTypeIcon(name)` helper.
-
-3. **`formatDate` in `ItemCard`** — locally defined utility that belongs in `src/lib/utils.ts` alongside `cn`.
-
-4. **Root route redirect** — `src/app/page.tsx` renders a bare `<h1>Devstash</h1>`. Should `redirect('/dashboard')`.
-
-5. **Favorite collections missing color** — `getSidebarCollections` skips the `dominantTypeColor` computation for favorite collections (`if (!col.isFavorite)` guard), so favorites always render without a color dot. Remove the guard.
-
-6. **Prisma schema missing `url` field** — `datasource db` has no `url = env("DATABASE_URL")` line, which breaks `prisma migrate` and `prisma studio` CLI commands.
+<!-- Goals & requirements -->
 
 ## Notes
 
-- Do not touch any DB query `userId` scoping — that is intentionally deferred until auth is implemented.
-- Do not modify mock/seed data files.
-- N+1 fix must use Prisma conventions only (`aggregate`, `groupBy`) — no raw SQL.
+<!-- Any extra notes -->
 
 ## History
 
