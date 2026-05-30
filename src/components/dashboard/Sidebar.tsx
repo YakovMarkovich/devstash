@@ -5,7 +5,6 @@ import {
   ChevronDown,
   ChevronUp,
   Star,
-  Settings,
   X,
 } from 'lucide-react';
 import type { ItemTypeWithCount } from '@/lib/db/items';
@@ -14,6 +13,7 @@ import { useSidebar } from './SidebarContext';
 import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 import { getTypeIcon } from '@/lib/icons';
+import { UserMenu } from '@/components/UserMenu';
 
 const PRO_TYPES = new Set(['file', 'image']);
 
@@ -21,12 +21,19 @@ function getTypeSlug(name: string) {
   return name.toLowerCase() + 's';
 }
 
+interface SidebarUser {
+  name?: string | null;
+  email?: string | null;
+  image?: string | null;
+}
+
 interface SidebarContentProps {
   itemTypes: ItemTypeWithCount[];
   sidebarCollections: SidebarCollection[];
+  user: SidebarUser | null;
 }
 
-function SidebarContent({ itemTypes, sidebarCollections }: SidebarContentProps) {
+function SidebarContent({ itemTypes, sidebarCollections, user }: SidebarContentProps) {
   const [typesOpen, setTypesOpen] = useState(true);
   const [collectionsOpen, setCollectionsOpen] = useState(true);
 
@@ -148,20 +155,11 @@ function SidebarContent({ itemTypes, sidebarCollections }: SidebarContentProps) 
       <div className="flex-1" />
 
       {/* User Area */}
-      <div className="border-t border-sidebar-border px-3 py-3">
-        <div className="flex items-center gap-2.5 px-2 py-2 rounded-md hover:bg-sidebar-accent transition-colors cursor-pointer">
-          <div className="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs font-bold shrink-0">
-            DS
-          </div>
-          <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium truncate">Demo User</p>
-            <p className="text-xs text-muted-foreground truncate">demo@devstash.io</p>
-          </div>
-          <button className="shrink-0 text-muted-foreground hover:text-foreground transition-colors">
-            <Settings className="h-4 w-4" />
-          </button>
+      {user && (
+        <div className="border-t border-sidebar-border px-3 py-3">
+          <UserMenu user={user} />
         </div>
-      </div>
+      )}
     </div>
   );
 }
@@ -169,9 +167,10 @@ function SidebarContent({ itemTypes, sidebarCollections }: SidebarContentProps) 
 interface SidebarProps {
   itemTypes: ItemTypeWithCount[];
   sidebarCollections: SidebarCollection[];
+  user: SidebarUser | null;
 }
 
-export function Sidebar({ itemTypes, sidebarCollections }: SidebarProps) {
+export function Sidebar({ itemTypes, sidebarCollections, user }: SidebarProps) {
   const { isOpen, isMobileOpen, setMobileOpen } = useSidebar();
 
   return (
@@ -183,7 +182,7 @@ export function Sidebar({ itemTypes, sidebarCollections }: SidebarProps) {
           isOpen ? 'w-56' : 'w-0 border-r-0'
         )}
       >
-        <SidebarContent itemTypes={itemTypes} sidebarCollections={sidebarCollections} />
+        <SidebarContent itemTypes={itemTypes} sidebarCollections={sidebarCollections} user={user} />
       </aside>
 
       {/* Mobile backdrop */}
@@ -209,7 +208,7 @@ export function Sidebar({ itemTypes, sidebarCollections }: SidebarProps) {
             <X className="h-4 w-4" />
           </button>
         </div>
-        <SidebarContent itemTypes={itemTypes} sidebarCollections={sidebarCollections} />
+        <SidebarContent itemTypes={itemTypes} sidebarCollections={sidebarCollections} user={user} />
       </aside>
     </>
   );

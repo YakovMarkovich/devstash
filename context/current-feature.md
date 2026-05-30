@@ -1,18 +1,28 @@
-# Current Feature
+# Current Feature: Auth UI - Sign In, Register & Sign Out
 
 ## Feature
 
+Auth UI - Sign In, Register & Sign Out
+
 ## Status
 
-<!-- Not Started|In Progress|Completed -->
+In Progress
 
 ## Goals
 
-<!-- Goals & requirements -->
+- Custom `/sign-in` page with email/password fields, GitHub OAuth button, and link to register
+- Custom `/register` page with name, email, password, confirm password fields; validates match; posts to `/api/auth/register`; redirects to sign-in on success
+- Form validation and error display on both pages
+- Replace sidebar user area with live session data: avatar (GitHub image or initials fallback), user name
+- Avatar click opens a dropdown with "Sign out" link; clicking avatar navigates to `/profile`
+- Reusable `UserAvatar` component that handles GitHub image vs. initials fallback
 
 ## Notes
 
-<!-- Any extra notes -->
+- Avatar logic: use `session.user.image` if present; otherwise derive initials from `session.user.name` (e.g. "Brad Traversy" → "BT")
+- NextAuth `pages` config must point `signIn` to `/sign-in`
+- Register success should redirect to `/sign-in` (not auto-sign-in)
+- All auth UI must match the existing dark-mode design system (Tailwind + ShadCN)
 
 ## History
 
