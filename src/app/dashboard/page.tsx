@@ -1,4 +1,5 @@
 import { Pin } from 'lucide-react';
+import { auth } from '@/auth';
 import { Sidebar } from '@/components/dashboard/Sidebar';
 import { StatsCards } from '@/components/dashboard/StatsCards';
 import { CollectionCard } from '@/components/dashboard/CollectionCard';
@@ -7,7 +8,8 @@ import { getRecentCollections, getCollectionStats, getItemStats, getSidebarColle
 import { getPinnedItems, getRecentItems, getItemTypes } from '@/lib/db/items';
 
 export default async function DashboardPage() {
-  const [recentCollections, collectionStats, itemStats, pinnedItems, recentItems, itemTypes, sidebarCollections] = await Promise.all([
+  const [session, recentCollections, collectionStats, itemStats, pinnedItems, recentItems, itemTypes, sidebarCollections] = await Promise.all([
+    auth(),
     getRecentCollections(6),
     getCollectionStats(),
     getItemStats(),
@@ -19,7 +21,7 @@ export default async function DashboardPage() {
 
   return (
     <>
-      <Sidebar itemTypes={itemTypes} sidebarCollections={sidebarCollections} />
+      <Sidebar itemTypes={itemTypes} sidebarCollections={sidebarCollections} user={session?.user ?? null} />
       <main className="flex-1 p-6 overflow-auto">
         <div className="max-w-5xl mx-auto space-y-8">
           <div>
