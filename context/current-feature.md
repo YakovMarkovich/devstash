@@ -1,32 +1,18 @@
-# Current Feature: Auth Setup - NextAuth + GitHub Provider
+# Current Feature
 
 ## Feature
 
-Auth Setup - NextAuth v5 with Prisma adapter and GitHub OAuth provider.
-
 ## Status
 
-In Progress
+<!-- Not Started|In Progress|Completed -->
 
 ## Goals
 
-- Install `next-auth@beta` and `@auth/prisma-adapter`
-- Create `src/auth.config.ts` — edge-compatible config (providers only, no adapter)
-- Create `src/auth.ts` — full config with Prisma adapter and JWT strategy
-- Create `src/app/api/auth/[...nextauth]/route.ts` — export handlers from `auth.ts`
-- Create `src/proxy.ts` — protect `/dashboard/*` routes, redirect unauthenticated users to sign-in
-- Create `src/types/next-auth.d.ts` — extend Session type with `user.id`
-- Add required env vars: `AUTH_SECRET`, `AUTH_GITHUB_ID`, `AUTH_GITHUB_SECRET`
+<!-- Goals & requirements -->
 
 ## Notes
 
-- Use `next-auth@beta` (not `@latest` which installs v4)
-- Proxy file must be at `src/proxy.ts` (same level as `app/`)
-- Use named export: `export const proxy = auth(...)` — not default export
-- Use `session: { strategy: 'jwt' }` with split config pattern
-- Do NOT set custom `pages.signIn` — use NextAuth's default page
-- Use Context7 to verify the newest config and conventions before implementing
-- Testing: navigate to `/dashboard` → should redirect to sign-in → click "Sign in with GitHub" → verify redirect back to `/dashboard`
+<!-- Any extra notes -->
 
 ## History
 
@@ -43,3 +29,4 @@ In Progress
 - **2026-05-23** — Stats & Sidebar: added `getItemTypes` (with custom display order) and `getSidebarCollections` (with `dominantTypeColor` and `itemCount`) to db layer; updated Sidebar to accept live data as props (removed mock-data dependency), show real item types with counts and correct order, favorite collections with star icons, recent collections with colored circle + item count, and a "View all collections" link; updated seed to support `isFavorite` on collections and marked React Patterns and AI Workflows as favorites
 - **2026-05-23** — Add Pro Badge to Sidebar: added ShadCN Badge component; File and Image item types in the sidebar now display a subtle secondary-variant "PRO" badge instead of an item count
 - **2026-05-26** — Code Audit Quick Wins: replaced 4 COUNT queries with 2 Prisma groupBy calls in getCollectionStats/getItemStats; extracted shared ICON_MAP to src/lib/icons.ts with getTypeIcon helper (removed duplication from Sidebar, CollectionCard, ItemCard); moved formatDate to src/lib/utils.ts; root route now redirects to /dashboard; fixed getSidebarCollections to compute dominantTypeColor for favorite collections (removed isFavorite guard)
+- **2026-05-30** — Auth Setup Phase 1: installed next-auth@beta and @auth/prisma-adapter; split config pattern with auth.config.ts (edge, GitHub provider) and auth.ts (Prisma adapter + JWT strategy + session.user.id callback); API route at src/app/api/auth/[...nextauth]/route.ts; src/proxy.ts protects /dashboard/* with callbackUrl redirect; src/types/next-auth.d.ts extends Session with user.id
