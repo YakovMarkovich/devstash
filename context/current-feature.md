@@ -1,28 +1,18 @@
-# Current Feature: Auth UI - Sign In, Register & Sign Out
+# Current Feature
 
 ## Feature
 
-Auth UI - Sign In, Register & Sign Out
-
 ## Status
 
-In Progress
+<!-- Not Started|In Progress|Completed -->
 
 ## Goals
 
-- Custom `/sign-in` page with email/password fields, GitHub OAuth button, and link to register
-- Custom `/register` page with name, email, password, confirm password fields; validates match; posts to `/api/auth/register`; redirects to sign-in on success
-- Form validation and error display on both pages
-- Replace sidebar user area with live session data: avatar (GitHub image or initials fallback), user name
-- Avatar click opens a dropdown with "Sign out" link; clicking avatar navigates to `/profile`
-- Reusable `UserAvatar` component that handles GitHub image vs. initials fallback
+<!-- Goals & requirements -->
 
 ## Notes
 
-- Avatar logic: use `session.user.image` if present; otherwise derive initials from `session.user.name` (e.g. "Brad Traversy" → "BT")
-- NextAuth `pages` config must point `signIn` to `/sign-in`
-- Register success should redirect to `/sign-in` (not auto-sign-in)
-- All auth UI must match the existing dark-mode design system (Tailwind + ShadCN)
+<!-- Any extra notes -->
 
 ## History
 
@@ -41,3 +31,4 @@ In Progress
 - **2026-05-26** — Code Audit Quick Wins: replaced 4 COUNT queries with 2 Prisma groupBy calls in getCollectionStats/getItemStats; extracted shared ICON_MAP to src/lib/icons.ts with getTypeIcon helper (removed duplication from Sidebar, CollectionCard, ItemCard); moved formatDate to src/lib/utils.ts; root route now redirects to /dashboard; fixed getSidebarCollections to compute dominantTypeColor for favorite collections (removed isFavorite guard)
 - **2026-05-30** — Auth Setup Phase 1: installed next-auth@beta and @auth/prisma-adapter; split config pattern with auth.config.ts (edge, GitHub provider) and auth.ts (Prisma adapter + JWT strategy + session.user.id callback); API route at src/app/api/auth/[...nextauth]/route.ts; src/proxy.ts protects /dashboard/* with callbackUrl redirect; src/types/next-auth.d.ts extends Session with user.id
 - **2026-05-30** — Auth Credentials Phase 2: added password field to User model via migration; Credentials provider placeholder in auth.config.ts (edge-safe); auth.ts overrides Credentials with bcrypt validation using split config pattern; POST /api/auth/register with input validation, duplicate check, and bcrypt hashing
+- **2026-05-30** — Auth UI Phase 3: custom /sign-in page (email/password + GitHub OAuth, Suspense-wrapped form, callbackUrl support), custom /register page (4-field form, client-side validation, success toast via sonner, redirects to sign-in), reusable UserAvatar (GitHub image or initials fallback), UserMenu in sidebar bottom (live session data, sign-out server action, profile link dropdown), auth.config.ts pages.signIn set to /sign-in, proxy.ts redirect updated, next.config.ts GitHub avatar hostname added
