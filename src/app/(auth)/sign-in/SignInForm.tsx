@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { signIn } from 'next-auth/react'
+import { toast } from 'sonner'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -41,7 +42,14 @@ export function SignInForm() {
     })
 
     if (result?.error) {
-      setError('Invalid email or password')
+      const code = result.url
+        ? new URL(result.url, window.location.href).searchParams.get('code')
+        : null
+      if (code === 'rate_limit') {
+        toast.error('Too many sign-in attempts. Please try again later.')
+      } else {
+        setError('Invalid email or password')
+      }
       setLoading(false)
       return
     }
