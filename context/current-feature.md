@@ -1,18 +1,28 @@
-# Current Feature
+# Current Feature: Profile Page
 
 ## Feature
 
+Profile page with user info, stats, change password, and delete account.
+
 ## Status
 
-<!-- Not Started|In Progress|Completed -->
+In Progress
 
 ## Goals
 
-<!-- Goals & requirements -->
+- Create `/profile` route (protected, requires auth)
+- Display user info: email, name, avatar (GitHub image or initials fallback), account creation date
+- Show usage stats: total items, total collections, breakdown by item type (snippets, prompts, notes, commands, links, files, images)
+- Change password action — visible only for email/password users (not GitHub OAuth)
+- Delete account action — requires confirmation dialog to prevent accidental deletion
 
 ## Notes
 
-<!-- Any extra notes -->
+- Avatar logic: use GitHub avatar from OAuth session if available, otherwise generate initials from name/email (reuse existing `UserAvatar` component)
+- Change password button hidden for GitHub OAuth users (detect by presence of `password` field or OAuth account record)
+- Delete account needs a ShadCN `AlertDialog` confirmation before proceeding
+- Item type breakdown uses the existing `getItemTypes` and a new per-type count query
+- Follow existing db layer patterns (`src/lib/db/`) for data fetching
 
 ## History
 
