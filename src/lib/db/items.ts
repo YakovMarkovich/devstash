@@ -192,3 +192,67 @@ export async function getItemsByType(slug: string): Promise<ItemsByTypeResult | 
     items: items.map(mapItem),
   };
 }
+
+export interface UpdateItemData {
+  title: string;
+  description: string | null;
+  content: string | null;
+  url: string | null;
+  language: string | null;
+  tags: string[];
+}
+
+export async function updateItem(id: string, data: UpdateItemData): Promise<ItemDetail | null> {
+  const updated = await prisma.item.update({
+    where: { id },
+    data: {
+      title: data.title,
+      description: data.description,
+      content: data.content,
+      url: data.url,
+      language: data.language,
+      tags: {
+        set: [],
+        connectOrCreate: data.tags.map((name) => ({
+          where: { name },
+          create: { name },
+        })),
+      },
+    },
+    include: {
+      itemType: true,
+      tags: true,
+      collections: {
+        include: { collection: { select: { id: true, name: true } } },
+      },
+    },
+  });
+
+  return {
+    id: updated.id,
+    title: updated.title,
+    description: updated.description,
+    isFavorite: updated.isFavorite,
+    isPinned: updated.isPinned,
+    content: updated.content,
+    contentType: updated.contentType,
+    url: updated.url,
+    fileUrl: updated.fileUrl,
+    fileName: updated.fileName,
+    fileSize: updated.fileSize,
+    language: updated.language,
+    itemType: {
+      id: updated.itemType.id,
+      name: updated.itemType.name,
+      icon: updated.itemType.icon,
+      color: updated.itemType.color,
+    },
+    tags: updated.tags.map((t) => t.name),
+    collections: updated.collections.map((ic) => ({
+      id: ic.collection.id,
+      name: ic.collection.name,
+    })),
+    createdAt: updated.createdAt,
+    updatedAt: updated.updatedAt,
+  };
+}
