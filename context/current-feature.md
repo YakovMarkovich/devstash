@@ -1,27 +1,18 @@
-# Current Feature: Items List View
+# Current Feature
 
 ## Feature
 
-Dynamic items listing page at `/items/[type]` that displays type-filtered items.
-
 ## Status
 
-In Progress
+<!-- Not Started|In Progress|Completed -->
 
 ## Goals
 
-- Create dynamic route `/items/[type]` (e.g., `/items/snippets`, `/items/notes`)
-- Fetch and display items filtered by the given type slug
-- Responsive grid of `ItemCard` components (2 columns on md+)
-- Each card has a left border colored by item type
-- Follow existing codebase patterns
+<!-- Goals & requirements -->
 
 ## Notes
 
-- The sidebar already links to `/items/{type}` — this route makes those links functional
-- Reuse `ItemCard` from the dashboard; it already accepts `itemType` as a prop
-- Look up the `ItemType` by its name/slug to scope the DB query
-- Display a "no items" empty state when there are no items of that type
+<!-- Any extra notes -->
 
 ## History
 
@@ -43,3 +34,4 @@ In Progress
 - **2026-05-30** — Auth UI Phase 3: custom /sign-in page (email/password + GitHub OAuth, Suspense-wrapped form, callbackUrl support), custom /register page (4-field form, client-side validation, success toast via sonner, redirects to sign-in), reusable UserAvatar (GitHub image or initials fallback), UserMenu in sidebar bottom (live session data, sign-out server action, profile link dropdown), auth.config.ts pages.signIn set to /sign-in, proxy.ts redirect updated, next.config.ts GitHub avatar hostname added
 - **2026-06-05** — Profile Page: /profile route protected by middleware; user info card (avatar, name, email, join date); usage stats (total items, total collections, per-type icon breakdown scoped by userId); Change Password dialog (email/password users only, hidden for OAuth); Delete Account with AlertDialog confirmation + next-auth/react signOut; POST /api/profile/change-password and DELETE /api/profile/delete-account; src/lib/db/profile.ts with getProfileUser and getProfileStats; installed ShadCN dialog, alert-dialog, separator (Base UI variants)
 - **2026-06-05** — Rate Limiting for Auth: installed @upstash/redis + @upstash/ratelimit; src/lib/rate-limit.ts with checkRateLimit (sliding window, fail-open), getIP, rateLimitResponse; /api/auth/register rate limited 3/hr/IP with 429+Retry-After; credentials login rate limited 5/15min/IP+email via authorize() throwing CredentialsSignin code="rate_limit", SignInForm shows toast on rate limit; stub endpoints for forgot-password (3/hr/IP), reset-password (5/15min/IP), resend-verification (3/15min/IP+email) ready for email flow
+- **2026-06-05** — Items List View: dynamic route /items/[type] with sidebar, 2-column responsive grid of ItemCard, empty state, and 404 for unknown type slugs; added getItemsByType to src/lib/db/items.ts (case-insensitive type lookup by slug); src/app/items/layout.tsx mirrors dashboard layout; middleware extended to protect /items/* routes
