@@ -103,3 +103,37 @@ export async function getRecentItems(limit = 10): Promise<ItemWithType[]> {
 
   return items.map(mapItem);
 }
+
+export interface ItemsByTypeResult {
+  itemType: ItemTypeInfo;
+  items: ItemWithType[];
+}
+
+export async function getItemsByType(slug: string): Promise<ItemsByTypeResult | null> {
+  const typeName = slug.slice(0, -1);
+
+  const itemType = await prisma.itemType.findFirst({
+    where: { name: { equals: typeName, mode: 'insensitive' } },
+  });
+
+  if (!itemType) return null;
+
+  const items = await prisma.item.findMany({
+    where: { itemTypeId: itemType.id },
+    orderBy: { createdAt: 'desc' },
+    include: {
+      itemType: true,
+      tags: true,
+    },
+  });
+
+  return {
+    itemType: {
+      id: itemType.id,
+      name: itemType.name,
+      icon: itemType.icon,
+      color: itemType.color,
+    },
+    items: items.map(mapItem),
+  };
+}

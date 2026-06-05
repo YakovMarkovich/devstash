@@ -1,18 +1,27 @@
-# Current Feature
+# Current Feature: Items List View
 
 ## Feature
 
+Dynamic items listing page at `/items/[type]` that displays type-filtered items.
+
 ## Status
 
-<!-- Not Started|In Progress|Completed -->
+In Progress
 
 ## Goals
 
-<!-- Goals & requirements -->
+- Create dynamic route `/items/[type]` (e.g., `/items/snippets`, `/items/notes`)
+- Fetch and display items filtered by the given type slug
+- Responsive grid of `ItemCard` components (2 columns on md+)
+- Each card has a left border colored by item type
+- Follow existing codebase patterns
 
 ## Notes
 
-<!-- Any extra notes -->
+- The sidebar already links to `/items/{type}` — this route makes those links functional
+- Reuse `ItemCard` from the dashboard; it already accepts `itemType` as a prop
+- Look up the `ItemType` by its name/slug to scope the DB query
+- Display a "no items" empty state when there are no items of that type
 
 ## History
 
