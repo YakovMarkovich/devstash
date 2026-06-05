@@ -1,28 +1,18 @@
-# Current Feature: Profile Page
+# Current Feature
 
 ## Feature
 
-Profile page with user info, stats, change password, and delete account.
-
 ## Status
 
-In Progress
+<!-- Not Started|In Progress|Completed -->
 
 ## Goals
 
-- Create `/profile` route (protected, requires auth)
-- Display user info: email, name, avatar (GitHub image or initials fallback), account creation date
-- Show usage stats: total items, total collections, breakdown by item type (snippets, prompts, notes, commands, links, files, images)
-- Change password action — visible only for email/password users (not GitHub OAuth)
-- Delete account action — requires confirmation dialog to prevent accidental deletion
+<!-- Goals & requirements -->
 
 ## Notes
 
-- Avatar logic: use GitHub avatar from OAuth session if available, otherwise generate initials from name/email (reuse existing `UserAvatar` component)
-- Change password button hidden for GitHub OAuth users (detect by presence of `password` field or OAuth account record)
-- Delete account needs a ShadCN `AlertDialog` confirmation before proceeding
-- Item type breakdown uses the existing `getItemTypes` and a new per-type count query
-- Follow existing db layer patterns (`src/lib/db/`) for data fetching
+<!-- Any extra notes -->
 
 ## History
 
@@ -42,3 +32,4 @@ In Progress
 - **2026-05-30** — Auth Setup Phase 1: installed next-auth@beta and @auth/prisma-adapter; split config pattern with auth.config.ts (edge, GitHub provider) and auth.ts (Prisma adapter + JWT strategy + session.user.id callback); API route at src/app/api/auth/[...nextauth]/route.ts; src/proxy.ts protects /dashboard/* with callbackUrl redirect; src/types/next-auth.d.ts extends Session with user.id
 - **2026-05-30** — Auth Credentials Phase 2: added password field to User model via migration; Credentials provider placeholder in auth.config.ts (edge-safe); auth.ts overrides Credentials with bcrypt validation using split config pattern; POST /api/auth/register with input validation, duplicate check, and bcrypt hashing
 - **2026-05-30** — Auth UI Phase 3: custom /sign-in page (email/password + GitHub OAuth, Suspense-wrapped form, callbackUrl support), custom /register page (4-field form, client-side validation, success toast via sonner, redirects to sign-in), reusable UserAvatar (GitHub image or initials fallback), UserMenu in sidebar bottom (live session data, sign-out server action, profile link dropdown), auth.config.ts pages.signIn set to /sign-in, proxy.ts redirect updated, next.config.ts GitHub avatar hostname added
+- **2026-06-05** — Profile Page: /profile route protected by middleware; user info card (avatar, name, email, join date); usage stats (total items, total collections, per-type icon breakdown scoped by userId); Change Password dialog (email/password users only, hidden for OAuth); Delete Account with AlertDialog confirmation + next-auth/react signOut; POST /api/profile/change-password and DELETE /api/profile/delete-account; src/lib/db/profile.ts with getProfileUser and getProfileStats; installed ShadCN dialog, alert-dialog, separator (Base UI variants)
