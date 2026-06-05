@@ -1,0 +1,2 @@
+- [Project Architecture](project-architecture.md) — structural facts: routes, auth status, DB layer, UI primitives, what is/isn't implemented yet
+- [Audit Patterns](audit-patterns.md) — recurring anti-patterns (ICON_MAP duplication, missing userId scoping, seed issues) and clean areas

@@ -1,0 +1,3 @@
+ctx7sk-d14572a5-5023-410f-85a9-7905a6d5812f
+
+claude mcp add --transport http --scope project context7 https://mcp.context7.com/mcp --header "CONTEXT7_API_KEY: ctx7sk-d14572a5-5023-410f-85a9-7905a6d5812f"

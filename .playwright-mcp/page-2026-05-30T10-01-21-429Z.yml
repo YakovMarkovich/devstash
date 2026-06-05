@@ -1,0 +1,785 @@
+- generic [active] [ref=e1]:
+  - region [ref=e3]:
+    - generic [ref=e5]:
+      - heading [level=2]
+      - generic [ref=e6]:
+        - paragraph [ref=e8]: Ми використовуємо файли cookie, щоб покращити взаємодію з користувачем
+        - generic [ref=e9]:
+          - button "Налаштувати" [ref=e10] [cursor=pointer]
+          - button "Прийняти всі" [ref=e11] [cursor=pointer]
+  - banner [ref=e12]:
+    - link "Особистий кабінет" [ref=e19] [cursor=pointer]:
+      - /url: https://my.foxminded.ua/login/
+      - img "Особистий кабінет" [ref=e20]
+  - generic [ref=e25]:
+    - heading "Школа IT-професій" [level=1] [ref=e26]
+    - generic [ref=e27]:
+      - generic [ref=e28]:
+        - generic [ref=e29]: "FoxmindEd — не просто курси програмування. Це унікальна школа ІТ-професій в форматі менторингу. Де студент опановує професію під наставництвом досвідченого програміста — ментора. Навчання побудоване за принципом симуляції реальної роботи початківця в ІТ: виконати завдання та отримати зворотній зв’язок від експерта."
+        - generic [ref=e30] [cursor=pointer]: Безкоштовна консультація
+        - generic [ref=e31]: Навчайтеся ІТ-професіїї саме так, як будете працювати!
+      - generic [ref=e32]:
+        - link "go logo icon foxminded" [ref=e34] [cursor=pointer]:
+          - /url: https://foxminded.ua/kurs-golang-1/
+          - img "go logo icon foxminded" [ref=e35]
+        - link "salesforce logo icon foxminded" [ref=e37] [cursor=pointer]:
+          - /url: https://foxminded.ua/salesforce-1/
+          - img "salesforce logo icon foxminded" [ref=e38]
+        - link "angular logo icon" [ref=e40] [cursor=pointer]:
+          - /url: https://foxminded.ua/front-end-1/
+          - img "angular logo icon" [ref=e41]
+        - link "node logo icon foxminded" [ref=e43] [cursor=pointer]:
+          - /url: https://foxminded.ua/node-js-1/
+          - img "node logo icon foxminded" [ref=e44]
+        - link "python logo icon foxminded" [ref=e46] [cursor=pointer]:
+          - /url: https://foxminded.ua/python-1/
+          - img "python logo icon foxminded" [ref=e47]
+        - link "qa logo icon foxminded" [ref=e49] [cursor=pointer]:
+          - /url: https://foxminded.ua/quality-assurance-1/
+          - img "qa logo icon foxminded" [ref=e50]
+        - generic [ref=e52]:
+          - link "csharp start logo icon" [ref=e53] [cursor=pointer]:
+            - /url: https://foxminded.ua/cs-start-1/
+            - img "csharp start logo icon" [ref=e54]
+          - link "csharp logo icon foxminded" [ref=e55] [cursor=pointer]:
+            - /url: https://foxminded.ua/c_sharp_dot_net-1/
+            - img "csharp logo icon foxminded" [ref=e56]
+          - img "close icon" [ref=e57] [cursor=pointer]
+        - link "js logo icon foxminded" [ref=e59] [cursor=pointer]:
+          - /url: https://foxminded.ua/javascript-start/
+          - img "js logo icon foxminded" [ref=e60]
+        - link "ui logo icon foxminded" [ref=e62] [cursor=pointer]:
+          - /url: https://foxminded.ua/ui-ux-design-1/
+          - img "ui logo icon foxminded" [ref=e63]
+        - link "android logo icon foxminded" [ref=e65] [cursor=pointer]:
+          - /url: https://foxminded.ua/android-1/
+          - img "android logo icon foxminded" [ref=e66]
+        - link "cplus logo icon foxminded" [ref=e68] [cursor=pointer]:
+          - /url: https://foxminded.ua/unreal-engine-1/
+          - img "cplus logo icon foxminded" [ref=e69]
+        - link "react logo icon foxminded" [ref=e71] [cursor=pointer]:
+          - /url: https://foxminded.ua/front-end-1/
+          - img "react logo icon foxminded" [ref=e72]
+        - link "php logo icon foxminded" [ref=e74] [cursor=pointer]:
+          - /url: https://foxminded.ua/php-1/
+          - img "php logo icon foxminded" [ref=e75]
+        - link "ios logo icon foxminded" [ref=e77] [cursor=pointer]:
+          - /url: https://foxminded.ua/ios-1/
+          - img "ios logo icon foxminded" [ref=e78]
+        - generic [ref=e80]:
+          - link "java start logo icon foxminded" [ref=e81] [cursor=pointer]:
+            - /url: https://foxminded.ua/kurs-java-start/
+            - img "java start logo icon foxminded" [ref=e82]
+          - link "java tools logo icon foxminded" [ref=e83] [cursor=pointer]:
+            - /url: https://foxminded.ua/trening-instrumentaryj-java-1/
+            - img "java tools logo icon foxminded" [ref=e84]
+          - link "java spring logo icon foxminded" [ref=e85] [cursor=pointer]:
+            - /url: https://foxminded.ua/java-1/
+            - img "java spring logo icon foxminded" [ref=e86]
+          - img "close icon" [ref=e87] [cursor=pointer]
+        - link "unity logo icon foxminded" [ref=e89] [cursor=pointer]:
+          - /url: https://foxminded.ua/unity-3d-1/
+          - img "unity logo icon foxminded" [ref=e90]
+  - generic [ref=e92]:
+    - img [ref=e94]
+    - generic [ref=e95]:
+      - heading "Про менторинг" [level=2] [ref=e96]
+      - generic [ref=e97]:
+        - paragraph [ref=e98]: Навчання в FoxmindEd проходить онлайн за методикою менторингу.
+        - paragraph [ref=e99]: Менторинг — це вид підтримуючих відносин і ефективний спосіб передачі знань, досвіду від більш досвідченого експерта (ментора), менш досвідченому (менті), який веде його до професійного розвитку та прогресу менті, розкриття його потенціалу.
+        - paragraph [ref=e100]: Протягом навчання студент взаємодіє із особистим ментором – досвідченим комерційним розробником професіоналом, який ділиться зі студентом своїми знаннями, навичками та досвідом.
+      - generic [ref=e101]:
+        - generic [ref=e102] [cursor=pointer]:
+          - img [ref=e103]
+          - text: Дивитись відео
+        - link "Докладніше" [ref=e106] [cursor=pointer]:
+          - /url: https://foxminded.ua/mentoring-course/
+          - text: Докладніше
+          - img [ref=e107]
+  - generic [ref=e110]:
+    - heading "Формати навчання" [level=2] [ref=e111]
+    - generic [ref=e112]:
+      - generic [ref=e113]:
+        - generic [ref=e114]: Стартові IT-курси
+        - generic [ref=e115]: основи мови програмування
+        - generic [ref=e116]: Курси формату стартові не вимагають підготовки та допоможуть новачкам в IT вивчити основи мови програмування
+        - link "Докладніше" [ref=e117] [cursor=pointer]:
+          - /url: https://foxminded.ua/start-course/
+          - text: Докладніше
+          - img [ref=e118]
+      - generic [ref=e120]:
+        - generic [ref=e121]: Менторинг
+        - generic [ref=e122]: навчання з особистим ментором
+        - generic [ref=e123]: Курси формату Менторинг призначені для розробників-початківців зі знаннями основ мови програмування під керівництвом досвідчених менторів
+        - link "Докладніше" [ref=e124] [cursor=pointer]:
+          - /url: https://foxminded.ua/mentoring-course/
+          - text: Докладніше
+          - img [ref=e125]
+      - generic [ref=e127]:
+        - generic [ref=e128]: Стажування на IT-проєкті
+        - generic [ref=e129]: перший комерційний досвід
+        - generic [ref=e130]: "Курси формату Стажування на IT-проєкті це симуляція реального проєкту для здобуття комерційного досвіду: команда, Status meetings, Sprint planning, Code review"
+        - link "Докладніше" [ref=e131] [cursor=pointer]:
+          - /url: https://foxminded.ua/obuchenie-na-proekte-1/
+          - text: Докладніше
+          - img [ref=e132]
+      - generic [ref=e134]:
+        - generic [ref=e135]: Три кроки до розробника
+        - generic [ref=e136]: комплексна програма навчання
+        - generic [ref=e137]: "Програма навчання складається з модулів: основи мови програмування, менторинг та стажування на реальному IT-проєкті. Це чіткий план входу в IT-професію від новачка до розробника з практичним досвідом"
+        - link "Докладніше" [ref=e138] [cursor=pointer]:
+          - /url: https://foxminded.ua/strong-junior/
+          - text: Докладніше
+          - img [ref=e139]
+      - generic [ref=e141]:
+        - generic [ref=e142]: Пробна співбесіда
+        - generic [ref=e143]: перевірка технічних знань
+        - generic [ref=e144]: Симуляція технічної співбесіди зі спецілістом в сфері IT рівня Senior Developer/ Team Leader
+        - link "Докладніше" [ref=e145] [cursor=pointer]:
+          - /url: https://foxminded.ua/trial_interview-1/
+          - text: Докладніше
+          - img [ref=e146]
+      - generic [ref=e148]:
+        - generic [ref=e149]: Курси для middle/senior
+        - generic [ref=e150]: для розробників із досвідом
+        - generic [ref=e151]: Курси рівня middle/senior розраховані на досвідчених фахівці для поглиблення знань у різних мовах та технологіях
+        - link "Докладніше" [ref=e152] [cursor=pointer]:
+          - /url: https://foxminded.ua/advanced-courses/
+          - text: Докладніше
+          - img [ref=e153]
+  - generic [ref=e157]:
+    - generic [ref=e158]:
+      - heading "Зв’яжіться з нами" [level=3] [ref=e159]
+      - generic [ref=e160]: Потрібно більше інформації?
+      - generic [ref=e161]:
+        - img [ref=e163]
+        - text: Допоможемо вибрати курс
+      - generic [ref=e164]:
+        - img [ref=e166]
+        - text: Запропонуємо найкращі умови
+      - generic [ref=e167]:
+        - img [ref=e169]
+        - text: Надамо відповіді на всі запитання
+    - generic [ref=e170]:
+      - generic [ref=e171]:
+        - generic [ref=e172]:
+          - status
+          - list
+        - form "Контактна форма" [ref=e173]:
+          - paragraph [ref=e177]:
+            - textbox "Ім'я *" [ref=e179]
+          - paragraph [ref=e183]:
+            - generic [ref=e185]:
+              - 'generic "Israel (‫ישראל‬‎): +972" [ref=e187]':
+                - generic [ref=e189]: "+972"
+              - textbox [ref=e191]
+          - paragraph [ref=e195]:
+            - textbox "Email *" [ref=e197]
+          - paragraph [ref=e199]:
+            - button "Залишити заявку" [ref=e200] [cursor=pointer]
+          - paragraph [ref=e202]:
+            - text: Надсилаючи повідомлення, ви погоджуєтесь з нашою
+            - link "офертою." [ref=e203] [cursor=pointer]:
+              - /url: /offerta-1/
+          - generic [ref=e204]:
+            - generic [ref=e205]: "Alternative:"
+            - 'textbox "Alternative: Alternative: Alternative: Alternative: Alternative: Alternative: Alternative:" [ref=e206]'
+      - generic [ref=e207]: Ми не співпрацюємо з резидентами РФ та РБ!
+  - generic [ref=e209]:
+    - heading "Як відбувається навчання на менторингу?" [level=2] [ref=e211]
+    - generic [ref=e212]:
+      - generic [ref=e213]:
+        - generic [ref=e214]: "1"
+        - generic [ref=e215]: Реєстрація на курс
+      - generic [ref=e216]:
+        - generic [ref=e217]: "2"
+        - generic [ref=e218]: Відповіді на ваші запитання
+      - generic [ref=e219]:
+        - generic [ref=e220]: "3"
+        - generic [ref=e221]: Знайомство з ментором
+      - generic [ref=e222]:
+        - generic [ref=e223]: "4"
+        - generic [ref=e224]: Отримання матеріалу та перше завдання
+      - generic [ref=e225]:
+        - generic [ref=e226]: "5"
+        - generic [ref=e227]: Відгук про роботу від ментора
+      - generic [ref=e228]:
+        - generic [ref=e229]: "6"
+        - generic [ref=e230]: Наступне завдання
+  - generic [ref=e233]:
+    - heading "Наші ментори" [level=2] [ref=e234]
+    - list [ref=e235]:
+      - listitem [ref=e236]:
+        - link "Android" [ref=e237] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e238]:
+        - link "Angular" [ref=e239] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e240]:
+        - link "Automation QA" [ref=e241] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e242]:
+        - link "C#/.NET" [ref=e243] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e244]:
+        - link "C++" [ref=e245] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e246]:
+        - link "DevOps" [ref=e247] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e248]:
+        - link "FastAPI" [ref=e249] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e250]:
+        - link "Front-End" [ref=e251] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e252]:
+        - link "Full Stack" [ref=e253] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e254]:
+        - link "Golang" [ref=e255] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e256]:
+        - link "IOS" [ref=e257] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e258]:
+        - link "Java" [ref=e259] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e260]:
+        - link "Node.js" [ref=e261] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e262]:
+        - link "PHP" [ref=e263] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e264]:
+        - link "Python" [ref=e265] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e266]:
+        - link "Python AI" [ref=e267] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e268]:
+        - link "React" [ref=e269] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e270]:
+        - link "SalesForce" [ref=e271] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e272]:
+        - link "Trial Interview" [ref=e273] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e274]:
+        - link "UI/UX" [ref=e275] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e276]:
+        - link "Unity" [ref=e277] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e278]:
+        - link "Unreal Engine" [ref=e279] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=e280]:
+        - link "Vue.js" [ref=e281] [cursor=pointer]:
+          - /url: "#"
+    - generic [ref=e283]:
+      - group "1 / 7" [ref=e284]:
+        - img "Кравченко Олексій - Ментор напряму Android" [ref=e286]
+        - generic [ref=e287]:
+          - generic [ref=e288]: Олексій Кравченко
+          - generic [ref=e289]: Android Developer
+          - generic [ref=e290]: TrackEnsure Inc.
+          - generic [ref=e291]:
+            - generic [ref=e293]:
+              - generic [ref=e294]: Досвід у сфері
+              - generic [ref=e295]: з 2013 року
+            - generic [ref=e297]:
+              - generic [ref=e298]: Досвід викладання
+              - generic [ref=e299]: з 2023 року
+          - paragraph [ref=e301]: Ще будучи студентом почав вивчати Java, завдяки чому отримав свою першу серйозну роботу в енергетичній компанії, якій треба було мобільний додаток. Так я встав на доріжку Android розробки. Зараз я займаю позицію Android Tech Lead та піклуюся про впровадження архітектурних рішень до проектів та про розвиток моєї команди.. А в якості ментора, я хочу передати свій досвід і знання, і розвіяти оману, що «програмування — це магія», як це було у мене).
+      - group "2 / 7" [ref=e302]:
+        - img "Олександр Дудник" [ref=e304]
+        - generic [ref=e305]:
+          - generic [ref=e306]: Олександр Дудник
+          - generic [ref=e307]: Senior Android Developer
+          - generic [ref=e308]: Marley Spoon
+          - generic [ref=e309]:
+            - generic [ref=e311]:
+              - generic [ref=e312]: Досвід у сфері
+              - generic [ref=e313]: з 2003 року
+            - generic [ref=e315]:
+              - generic [ref=e316]: Досвід викладання
+              - generic [ref=e317]: з 2015 року
+          - generic [ref=e318]:
+            - paragraph [ref=e319]: Розробник з більш ніж 20-річним стажем. Маю досвід керівництва та менторства.
+            - paragraph [ref=e320]: Починав і довгий час працював з 1С. Також мав досвід роботи з C++, Pascal, FoxPro, PHP, HTML, CSS, JavaScript.
+            - paragraph [ref=e321]: З 2021 року працюю Android-розробником на фултайм в міжнародних компаніях. Загальний досвід в Android — близько 7 років.
+            - paragraph [ref=e322]: "Стек: Java, Kotlin, Jetpack Compose, RxJava, Coroutines, Retrofit, Dagger, Koin, Room, Realm, Glide, Coil, Picasso, GeoPackage, Maps, Sensors, Camera, NFC, Computer Vision, ML Kit."
+            - paragraph [ref=e323]: Основний скоуп — бізнес-застосунки.
+      - group "3 / 7" [ref=e324]:
+        - img "Максим Кичук ментор" [ref=e326]
+        - generic [ref=e327]:
+          - generic [ref=e328]: Максим Кичук
+          - generic [ref=e329]: Android Developer
+          - generic [ref=e330]: Grid Dynamics
+          - generic [ref=e331]:
+            - generic [ref=e333]:
+              - generic [ref=e334]: Досвід у сфері
+              - generic [ref=e335]: з 2019 року
+            - generic [ref=e337]:
+              - generic [ref=e338]: Досвід викладання
+              - generic [ref=e339]: з 2024 року
+          - paragraph [ref=e341]:
+            - text: "Android-розробник з більш ніж 5-річним досвідом. За цей час я працював у різних компаніях, кожна з яких мала свій підхід до розробки. Це дало мені цінний досвід роботи над застосунками різних сфер і розмірів. Маю досвід роботи на всіх етапах розробки: від аналізу та проектування до тестування та відлагодження. Також маю досвід співпраці з міжфункціональними командами для досягнення поставлених цілей. Прагну використовувати сучасні технології та підходи у своїй роботі. Водночас, я розумію важливість знання базових принципів та фундаментальних знань для успішного розвитку."
+            - text: "Свій шлях я розпочав ще в університеті, де отримав фундаментальні знання з програмної інженерії. Опанував специфіку Android-розробки самостійно: мені допомогли інтернет-ресурси, книги, документація та, звісно ж, практика. Тому я знаю, як це зробити, і готовий поділитися своїм досвідом та знаннями з іншими."
+      - group "4 / 7" [ref=e342]:
+        - img "Роман Криволапов" [ref=e344]
+        - generic [ref=e345]:
+          - generic [ref=e346]: Роман Криволапов
+          - generic [ref=e347]: Senior Android developer
+          - generic [ref=e348]: Digitall
+          - generic [ref=e349]:
+            - generic [ref=e351]:
+              - generic [ref=e352]: Досвід у сфері
+              - generic [ref=e353]: з 2009 року
+            - generic [ref=e355]:
+              - generic [ref=e356]: Досвід викладання
+              - generic [ref=e357]: з 2023 року
+          - paragraph [ref=e359]: Я маю 5 років досвіду роботи як Android Developer і 11+ років як Frontend Developer. Я почав вивчати програмування з останніх класів школи й після закінчення університету вибрав розробку програмного забезпечення як основну професію. Я працював над багатьма різними проєктами, останні 2 роки займався розробкою банківських додатків. Добре знайомий з усіма принципами написання підтримуваних і розширюваних додатків — Clean Architecture, SOLID, Design Patterns, Best Practices та іншими. У вільний час пишу статті на Medium і програми для STM32, ESP32, Atmega та інших мікроконтролерів.
+      - group "5 / 7" [ref=e360]:
+        - img "Гладштейн Дан - Ментор напряму Android" [ref=e362]
+        - generic [ref=e363]:
+          - generic [ref=e364]: Дан Гладштейн
+          - generic [ref=e365]: Android Software Engineer
+          - generic [ref=e366]: YIT — Yedioth Information Technology
+          - generic [ref=e367]:
+            - generic [ref=e369]:
+              - generic [ref=e370]: Досвід у сфері
+              - generic [ref=e371]: з 2012 року
+            - generic [ref=e373]:
+              - generic [ref=e374]: Досвід викладання
+              - generic [ref=e375]: з 2019 року
+          - paragraph [ref=e377]: Розробкою під Android займаюся вже 7 років, в основному в стартапах і продуктових компаніях. Вирішив зайнятися менторством щоб допомогти зацікавленим людям придбати необхідні для роботи в IT основні навички та знання.
+      - group "6 / 7" [ref=e378]:
+        - img "Мамедов Руслан - Ментор напряму Android" [ref=e380]
+        - generic [ref=e381]:
+          - generic [ref=e382]: Руслан Мамедов
+          - generic [ref=e383]: Android Developer
+          - generic [ref=e384]: Luxoft
+          - generic [ref=e385]:
+            - generic [ref=e387]:
+              - generic [ref=e388]: Досвід у сфері
+              - generic [ref=e389]: з 2014 року
+            - generic [ref=e391]:
+              - generic [ref=e392]: Досвід викладання
+              - generic [ref=e393]: з 2019 року
+          - paragraph [ref=e395]: За освітою інженер з автоматизації, в програмування прийшов в 2015 році. Вивчав професію самостійно і за повчанням ментора, вважаю цей підхід найефективнішим з багатьох причин, таким як найкраща самоорганізація, велика глибина знань, вміння самостійно навчатися і шукати інформацію, і багато іншого.
+      - group "7 / 7" [ref=e396]:
+        - img "ментор Павло Зоря" [ref=e398]
+        - generic [ref=e399]:
+          - generic [ref=e400]: Павло Зоря
+          - generic [ref=e401]: Android Engineer
+          - generic [ref=e402]: EPAM Systems
+          - generic [ref=e403]:
+            - generic [ref=e405]:
+              - generic [ref=e406]: Досвід у сфері
+              - generic [ref=e407]: з 2018 року
+            - generic [ref=e409]:
+              - generic [ref=e410]: Досвід викладання
+              - generic [ref=e411]: з 2020 року
+          - paragraph [ref=e413]: "Android-розробник з трирічним досвідом роботи в різних ІТ компаніях (від маленьких продуктових до великих outsource). Зараз працюю в EPAM Systems. Маю досвід менторингу спеціалістів з різним досвідом від початківців, до досвідчених. Зараз на проекті технології: Kotlin/Java, Kotlin Coroutines, MVVM, Koin, Retrofit, Gson. Також використовував технології: RxJava, GoogleMaps, ffmpeg, ExoPlayer, Navigation Component. Вважаю, що все залежить від вашого бажання і завзятості. Займаюсь менторством для того, щоб розширити community та розвинути галузь."
+    - generic [ref=e414]:
+      - button "Previous slide" [disabled] [ref=e415] [cursor=pointer]:
+        - img [ref=e416]
+      - button "Next slide" [ref=e418] [cursor=pointer]:
+        - img [ref=e419]
+    - link "Стати ментором в FoxmindED" [ref=e421] [cursor=pointer]:
+      - /url: "#"
+  - generic [ref=e422]:
+    - generic [ref=e424]:
+      - heading "Відгуки студентів" [level=2] [ref=e425]
+      - generic [ref=e426]:
+        - link "Відгуки Google" [ref=e427] [cursor=pointer]:
+          - /url: https://www.google.com/maps/place/FoxmindEd/@50.4024959,30.5369086,17z/data=!3m1!4b1!4m6!3m5!1s0x40d4c8c93d1de9ff:0x32d8d7e51b76b32e!8m2!3d50.4024959!4d30.5369086!16s%2Fg%2F11dxh_7bb7
+          - img [ref=e428]
+          - generic [ref=e431]: Відгуки Google
+        - link "Відгуки Facebook" [ref=e432] [cursor=pointer]:
+          - /url: https://www.facebook.com/foxmindedco/reviews
+          - img [ref=e433]
+          - generic [ref=e436]: Відгуки Facebook
+    - generic [ref=e439]:
+      - group "1 / 30" [ref=e440]:
+        - generic [ref=e441]: Oleksandr Nikolaichuk
+        - generic [ref=e442]: Ефективний Team Lead
+        - generic [ref=e443]: Проходжу курс «Ефективний тімлід», і він дуже добре ставить акценти на головному — на команді. Це курс не про «як бути ідеальним лідом», а про те, як побудувати систему, в якій команда може нормально працювати й не ламатися від хаосу, техборгу та конфліктів. Дуже…
+        - generic [ref=e444] [cursor=pointer]: Читати повний відгук
+      - group "2 / 30" [ref=e445]:
+        - generic [ref=e446]: Maksym Voloshyn
+        - generic [ref=e447]: Ефективний Team Lead
+        - generic [ref=e448]: Проходжу курс «Ефективний тімлід». Спостерігаю за Сергієм і FoxmindEd уже понад 5 років, тому без зайвих роздумів пішов у першу ж групу курсу, просто take my money. У результаті отримав багато практичних інструментів для підвищення продуктивності команди, ексклюз…
+        - generic [ref=e449] [cursor=pointer]: Читати повний відгук
+      - group "3 / 30" [ref=e450]:
+        - generic [ref=e451]: Yurii Lukashenko
+        - generic [ref=e452]: Ефективний Team Lead
+        - generic [ref=e453]: Проходжу курс «Ефективний Team Lead». Дуже подобається формат курсу, розглядаємо усі аспекти в деталях, як бути ефективним та будувати команду. Курс є унікальним, не бачив схожих курсів, які б так пояснювали усе від А до Я. Особливо класно те, що ми розглядаємо н…
+        - generic [ref=e454] [cursor=pointer]: Читати повний відгук
+      - group "4 / 30" [ref=e455]:
+        - generic [ref=e456]: Дмитро Луценко
+        - generic [ref=e457]: Ефективний Team Lead
+        - generic [ref=e458]: Проходжу курс «Ефективний тімлід». Сергій ділиться дуже цікавим досвідом. Майже кожне заннятя у мене виникає питання «а що можно було так?».На мій погляд це дуже круті знання.
+      - group "5 / 30" [ref=e459]:
+        - generic [ref=e460]: Vitalii Liashenko
+        - generic [ref=e461]: Ефективний Team Lead
+        - generic [ref=e462]: Теж проходжу курс «Ефективний тімлід». Багато чого дізнався нового і отримав спростування або підтвердження якихось речей, які мене цікавили але до цього не знайшов де прочитати. Схожих курсів під реалії українського IT я теж знайшов небагато. Тому рекомендую про…
+        - generic [ref=e463] [cursor=pointer]: Читати повний відгук
+      - group "6 / 30" [ref=e464]:
+        - generic [ref=e465]: Іван Мироненко
+        - generic [ref=e466]: Ефективний Team Lead
+        - generic [ref=e467]: "Зараз проходжу курс «Ефективний тімлід». Основні переваги курсу: 1. Унікальність — не зміг знайти більше жодного курсу, який допомагав би людині розібратися в ролі тімліда та сформувати і здобути скіли, необхідні для ефективної роботи на даній позиції; 2. Інтерак…"
+        - generic [ref=e468] [cursor=pointer]: Читати повний відгук
+      - group "7 / 30" [ref=e469]:
+        - generic [ref=e470]: Юрій Пугач
+        - generic [ref=e471]: JAVA SPRING
+        - generic [ref=e472]: Закінчив курс менторства Java Spring під керівництвом Петра Вергелеса. Курс Java Spring від FoxmindEd – це справжній виклик для розробників, які бажають поринути у практичну роботу. Завдання формулюються так, що для їх виконання потрібно використовувати сучасні і…
+        - generic [ref=e473] [cursor=pointer]: Читати повний відгук
+      - group "8 / 30" [ref=e474]:
+        - generic [ref=e475]: Safta Artem
+        - generic [ref=e476]: C# START
+        - generic [ref=e477]: Лаконічне подання матеріалу. Можливість ознайомитися (в моєму випадку також і освіжити в пам’яті) з основними поняттями в програмуванні. Часом «крива» складності різко зростала, але особисто мене це потішило, тому що було піднято кілька цікавих для мене тем, у як…
+        - generic [ref=e478] [cursor=pointer]: Читати повний відгук
+      - group "9 / 30" [ref=e479]:
+        - generic [ref=e480]: Povh Andriy
+        - generic [ref=e481]: Python Start
+        - generic [ref=e482]: Структура навчання — досить добра, допомагає не розриватись на різні теми і послідовно веде до розуміння, а не простого запам’ятовування.
+      - group "10 / 30" [ref=e483]:
+        - generic [ref=e484]: Kovtunova Oleksandra
+        - generic [ref=e485]: Swift Start
+        - generic [ref=e486]: Курс класний. Для базового ознайомлення та розуміння чи це «твоє». Мені дуже сподобалось, що було багато прикладів. Що були практичні завдання. А також, що темп вільний і лектор спілкувався з учнями «простими словами», та не було багато води. Дякую!
+      - group "11 / 30" [ref=e487]:
+        - generic [ref=e488]: Анатолій
+        - generic [ref=e489]: GRASP & GOF Design Patterns
+        - generic [ref=e490]: Записався на курси GRASP & GOF DESIGN PATTERNS. Чому безмежно радий та буду рекомендувати. Шаблони це дійсно причина подумати, та варіацій рішень може бути багато основуючись на канонічних варіантах. Принципи це розуміння чорної та білої грані між якою потрібно б…
+        - generic [ref=e491] [cursor=pointer]: Читати повний відгук
+      - group "12 / 30" [ref=e492]:
+        - generic [ref=e493]: Андрій
+        - generic [ref=e494]: GRASP & GOF Design Patterns
+        - generic [ref=e495]: Сьогодні закінчився майстер клас по паттернам. З творчістю Сергія я познайомився, як і більшість людей, на ютубі. Я дивився і думав, розумний дядько, а потім гортав DOU і побачив, що буде майстер клас, я записався, хоч у мене і були деякі знання, але вони були фр…
+        - generic [ref=e496] [cursor=pointer]: Читати повний відгук
+      - group "13 / 30" [ref=e497]:
+        - generic [ref=e498]: Роман
+        - generic [ref=e499]: GRASP & GOF Design Patterns
+        - generic [ref=e500]: Пояснення шаблонів було чітким та зрозумілим. Для більшості шаблонів було наведено приклади правильного чи неправильного його використання — це дозволяє глибше зрозуміти їх суть. Інформація отримана на даному тренінгу дозволила структурувати дані відомості про ті…
+        - generic [ref=e501] [cursor=pointer]: Читати повний відгук
+      - group "14 / 30" [ref=e502]:
+        - generic [ref=e503]: Ігор
+        - generic [ref=e504]: GRASP & GOF Design Patterns
+        - generic [ref=e505]: За 4 дні тренінгів, які проводив Сергій Немчинський, я відкрив для себе дуже багато цікавого. Якщо говорити детально, то Сергій показує все на власних прикладах. Я відчував, що це можна було використовувати раніше в якихось попередніх проектах. Від людей з якими …
+        - generic [ref=e506] [cursor=pointer]: Читати повний відгук
+      - group "15 / 30" [ref=e507]:
+        - generic [ref=e508]: Юрій
+        - generic [ref=e509]: GRASP & GOF Design Patterns
+        - generic [ref=e510]: Проходив тренінги по GoF/GRASP та Enterprise патерни. Від Сергія почерпнув досвід (отриманий «кровью та потом»), отримав заряд впевненості, і як наслідок кар’єрний взліт та авторитет серед колег та замовників. Дякую Foxminded!!!
+      - group "16 / 30" [ref=e511]:
+        - generic [ref=e512]: Олександр
+        - generic [ref=e513]: Enterprise Patterns
+        - generic [ref=e514]: Сергій, Доброго дня! Дякуємо Вам та Вашій команді за курс! Дуже якісний матеріал та перевірка завдань. Робота з ментором приносить величезне задоволення) Я не тільки вивчив патерни, але й зрозумів спільні ідеї, що потрібно робити, а що не можна. Тому і зараз, і в…
+        - generic [ref=e515] [cursor=pointer]: Читати повний відгук
+      - group "17 / 30" [ref=e516]:
+        - generic [ref=e517]: Alena N.
+        - generic [ref=e518]: Enterprise Patterns
+        - generic [ref=e519]: Проходжу навчання на курсі Enterprise Patterns. Доводиться вирішувати купу завдань, їх на кожен шаблон по одному. При цьому Сергій дає загальну інформацію по патерну, про ситуації, коли варто або не варто використовувати, дає корисні поради, реалізація залишаєтьс…
+        - generic [ref=e520] [cursor=pointer]: Читати повний відгук
+      - group "18 / 30" [ref=e521]:
+        - generic [ref=e522]: Дмитро Кучерявенко
+        - generic [ref=e523]: Enterprise Patterns
+        - generic [ref=e524]: Для себе особисто вважаю курс мега корисним, не дивлячись на те що не пройшов його до кінця. Книга по якій складений курс — в ту-ду аркуші у мене вже давно. Хочу подякувати за те що викладаєте у відкритий доступ велику кількість освітніх відео. Дуже багато речей …
+        - generic [ref=e525] [cursor=pointer]: Читати повний відгук
+      - group "19 / 30" [ref=e526]:
+        - generic [ref=e527]: Дмитро Мойсеєв
+        - generic [ref=e528]: Enterprise Patterns
+        - generic [ref=e529]: Особисто для мене курс виявився дуже корисним, саме те, чого не вистачало. Я розумів, що є якісь напрацювання в галузі архітектури ПО, але не розумів куди рухатися. ООП, SOLID, GRASP, GoF — це все звичайно добре, але замало. Ці ж шаблони — відкрили цілий напрям д…
+        - generic [ref=e530] [cursor=pointer]: Читати повний відгук
+      - group "20 / 30" [ref=e531]:
+        - generic [ref=e532]: Serhii Lezhenin
+        - generic [ref=e533]: FoxmindEd
+        - generic [ref=e534]: Дуже гарні курси, які привчають до терпіння, самонавчання та отримання результату. Ментор завжди направить на правильний шлях.
+      - group "21 / 30" [ref=e535]:
+        - generic [ref=e536]: Vlada
+        - generic [ref=e537]: FoxmindEd
+        - generic [ref=e538]: Система навчання підійшла відмінно, дуже сподобалося! Курс навчає реальним навичкам. Хочу подякувати ментору та менеджеру за постійний зв’язок та працю
+      - group "22 / 30" [ref=e539]:
+        - generic [ref=e540]: Дмитро Купрієв
+        - generic [ref=e541]: FoxmindEd
+        - generic [ref=e542]: Було дуже приємно проходити менторинг в цій компанії. На всі мої запитання відповідали розгорнуто і зрозуміло, підтримували і направляли. Приємно, що люди, з якими ти працюєш, хочуть щоб ти потрапив в ІТ не менше ніж ті сам того хочеш!)
+      - group "23 / 30" [ref=e543]:
+        - generic [ref=e544]: Студент FoxmindEd
+        - generic [ref=e545]: Python Start
+        - generic [ref=e546]: Реально хороші курси, формат максимально корисний, дуже багато практики і хороші знання після завершення!
+      - group "24 / 30" [ref=e547]:
+        - generic [ref=e548]: Олексій Чуйко
+        - generic [ref=e549]: Python Start
+        - generic [ref=e550]: Добре пояснюють, на запитання дають вичерпні відповіді. Раджу!
+      - group "25 / 30" [ref=e551]:
+        - generic [ref=e552]: Denys Brahin
+        - generic [ref=e553]: Python Start
+        - generic [ref=e554]: Дуже сучасний метод навчання, де ви не вчите все поспіль, а займаєтеся справою та стаєте професіоналом!
+      - group "26 / 30" [ref=e555]:
+        - generic [ref=e556]: Сергій Виноградов
+        - generic [ref=e557]: C++
+        - generic [ref=e558]: Корисний ресурс. Не тільки курси, а й контент на You Tube.
+      - group "27 / 30" [ref=e559]:
+        - generic [ref=e560]: Viter Serhii
+        - generic [ref=e561]: C++ Start
+        - generic [ref=e562]: Все класно, чітко, по поличкам. Саша все дуже добре, зрозуміло пояснює. Шкода що так піздно курс вийшов, хоча б рік тому. Скільки б часу це мені зекономило.
+      - group "28 / 30" [ref=e563]:
+        - generic [ref=e564]: Voronovska Iuliia
+        - generic [ref=e565]: C++ Start
+        - generic [ref=e566]: Все сподобалось. Добре пояснюють.
+      - group "29 / 30" [ref=e567]:
+        - generic [ref=e568]: Andriichuk Oleh
+        - generic [ref=e569]: C++ Start
+        - generic [ref=e570]: Мені сподобалось те, що акцент курсу є більше на практичних завданнях, ніж на теорії.
+      - group "30 / 30" [ref=e571]:
+        - generic [ref=e572]: Burmistrov Ruslan
+        - generic [ref=e573]: C++ Start
+        - generic [ref=e574]: Дуже якісна подача матеріалу. Ментор дуже зрузуміло і професіонально пояснює всі аспекти роботи програми і написання коду. Цікаво доносить зміст сложної теми використовуючи прості пояснення. Добре поставлена мова у ментора — приємно слухати.
+    - generic [ref=e575]:
+      - button "Previous slide" [disabled] [ref=e576] [cursor=pointer]:
+        - img [ref=e577]
+      - button "Next slide" [ref=e579] [cursor=pointer]:
+        - img [ref=e580]
+  - generic [ref=e583]:
+    - generic [ref=e584]:
+      - heading "Чому нас вибирають?" [level=2] [ref=e585]
+      - img [ref=e586]
+    - generic [ref=e588]:
+      - generic [ref=e589]:
+        - generic [ref=e591]: Менторинг — найефективніша методика
+        - paragraph [ref=e593]: При навчанні з ментором студент вирішує завдання самостійно, а ментор допомагає впоратися зі складнощами. Це ефективніше, ніж курси лекцій або завдання для самостійного рішення
+      - generic [ref=e594]:
+        - generic [ref=e596]: Ментори — професіонали
+        - paragraph [ref=e598]: Ментор — це не вчитель-теоретик, а спеціаліст-практик рівня middle або senior, який працює над подібними задачами, знає індустрію зсередини, її підводні камені та кращі практики
+      - generic [ref=e599]:
+        - generic [ref=e601]: Без лекцій, тільки практика
+        - paragraph [ref=e603]: Ви не платите за лекції і теоретичний матеріал, адже це все можна знайти в інтернеті безкоштовно
+      - generic [ref=e604]:
+        - generic [ref=e606]: Завдання із реального життя
+        - paragraph [ref=e608]: Ми не складаємо абстрактні завдання, а беремо конкретні задачі, з якими стикається розробник при роботі з клієнтами, і які чекають на програміста в подальшому
+      - generic [ref=e609]:
+        - generic [ref=e611]: Програма курсів оновлена в 2025
+        - paragraph [ref=e613]: Програма курсів оновлюється постійно згідно до вимог ринку та розвитку сфери ІТ. Наші ментори – комерційні розробники , які завжди працюють над покращенням програми курсів
+      - generic [ref=e614]:
+        - generic [ref=e616]: Кар’єрна підтримка
+        - paragraph [ref=e618]: Допомагаємо нашим студентам із резюме, LinkedIn та пробною співбесідою для пошуку роботи. Проводимо корисні вебінари та ділимося вакансіями партнерів
+  - generic [ref=e620]:
+    - generic [ref=e621]:
+      - heading "Наші події" [level=2] [ref=e622]
+      - link "Всі події" [ref=e623] [cursor=pointer]:
+        - /url: https://foxminded.ua/meropriyatiya-1/
+        - text: Всі події
+        - img [ref=e624]
+    - generic [ref=e626]:
+      - link "Курс «Кодерський Навігатор» від Сергія Немчинського — це тест-драйв Java, Python, JS та C++ . Вартість лише 499 гривень. Якщо продовжите навчання, ми зарахуємо ці кошти в оплату будь якого стартового курсу!" [ref=e627] [cursor=pointer]:
+        - /url: https://foxminded.ua/start-kurs-vybir-movy-prohramuvannia/?utm_source=podii
+        - img [ref=e629]
+        - generic [ref=e630]: Курс «Кодерський Навігатор» від Сергія Немчинського — це тест-драйв Java, Python, JS та C++ . Вартість лише 499 гривень. Якщо продовжите навчання, ми зарахуємо ці кошти в оплату будь якого стартового курсу!
+      - 'link "Хочеш в IT, але боїшся, що без досвіду не візьмуть? Ми вивели ідеальну формулу, що дійсно працює: «Три кроки до розробника 🧑‍💻»" [ref=e631] [cursor=pointer]':
+        - /url: https://foxminded.ua/strong-junior/
+        - img [ref=e633]
+        - generic [ref=e634]: "Хочеш в IT, але боїшся, що без досвіду не візьмуть? Ми вивели ідеальну формулу, що дійсно працює: «Три кроки до розробника 🧑‍💻»"
+  - generic [ref=e637]:
+    - heading "Слідкуйте за нами у соцмережах" [level=2] [ref=e638]
+    - generic [ref=e639]: щоб бути в курсі всіх новин у світі IT, наших подій та акцій
+    - generic [ref=e640]:
+      - link [ref=e641] [cursor=pointer]:
+        - /url: https://www.youtube.com/@Nemchynskyi
+        - img [ref=e642]
+      - link [ref=e645] [cursor=pointer]:
+        - /url: https://t.me/foxminded_learning_bot
+        - img [ref=e646]
+      - link [ref=e648] [cursor=pointer]:
+        - /url: https://www.facebook.com/foxmindedco/
+        - img [ref=e649]
+      - link [ref=e651] [cursor=pointer]:
+        - /url: https://www.instagram.com/foxminded.ua/
+        - img [ref=e652]
+      - link [ref=e655] [cursor=pointer]:
+        - /url: https://www.tiktok.com/@foxminded_ua
+        - img [ref=e656]:
+          - generic "tiktok" [ref=e657]
+      - link [ref=e659] [cursor=pointer]:
+        - /url: https://ua.linkedin.com/school/foxminded/
+        - img [ref=e660]
+  - generic [ref=e667]:
+    - heading "Нас часто питають:" [level=2] [ref=e669]
+    - generic [ref=e670]:
+      - generic [ref=e672]:
+        - generic [ref=e675] [cursor=pointer]:
+          - generic [ref=e676]: "[ 1 ]"
+          - generic [ref=e677]: Які є курси ІТ у FoxmindEd і чим вони відрізняються?
+        - generic [ref=e681] [cursor=pointer]:
+          - generic [ref=e682]: "[ 2 ]"
+          - generic [ref=e683]: Чим відрізняються онлайн курси програмування від офлайн навчання?
+        - generic [ref=e687] [cursor=pointer]:
+          - generic [ref=e688]: "[ 3 ]"
+          - generic [ref=e689]: З якого віку можна почати навчання IT у вас?
+        - generic [ref=e693] [cursor=pointer]:
+          - generic [ref=e694]: "[ 4 ]"
+          - generic [ref=e695]: Чи отримаю я сертифікат після проходження курсу?
+        - generic [ref=e699] [cursor=pointer]:
+          - generic [ref=e700]: "[ 5 ]"
+          - generic [ref=e701]: Чи допомагає FoxmindEd з працевлаштуванням?
+        - generic [ref=e705] [cursor=pointer]:
+          - generic [ref=e706]: "[ 6 ]"
+          - generic [ref=e707]: Як обрати курси програмування, які підійдуть саме для мене?
+        - generic [ref=e711] [cursor=pointer]:
+          - generic [ref=e712]: "[ 7 ]"
+          - generic [ref=e713]: Чи є у вас IT-курси онлайн з практикою?
+      - generic [ref=e715]:
+        - generic [ref=e716]: Залишились питання?
+        - img [ref=e717]
+        - link "Безкоштовна консультація" [ref=e719] [cursor=pointer]:
+          - /url: ""
+  - generic [ref=e723]:
+    - heading "Станьте IT-фахівцем з нуля" [level=2] [ref=e724]
+    - generic [ref=e725]:
+      - paragraph [ref=e726]: Чи допомагає якийсь курс IT з нуля стати хорошим фахівцем? Так, якщо це методика навчання, заснована на практиці та роботі з діючими фахівцями. Саме так влаштовані курси на IT-фахівця від FoxmindEd IT School.
+      - heading "Як влаштовані курси ІТ-фахівців від FoxmindEd" [level=2] [ref=e727]
+      - paragraph [ref=e728]: Курси в ІТ-сфері передбачають, що ви отримаєте практичні навички. У більшості випадків це теоретичні уроки за принципом «Подивись і повтори». Наша теорія влаштована за таким же зрозумілим і доступним принципом. Але головна особливість — менторство.
+      - heading "Як відбувається навчання з ментором" [level=3] [ref=e729]
+      - paragraph [ref=e730]: Ментор на курсі — це фахівець, який є практикуючим розробником і експертом у своїй сфері. Це не просто вчитель. Він працює з реальними завданнями, стежить за трендами та змінами, щодня взаємодіє з проєктами і розвиває свої навички. Тому досвід ментора дуже важливий і актуальний для студента.
+      - paragraph [ref=e731]: "Ваше навчання з ментором проходить наступним чином:"
+      - list [ref=e732]:
+        - listitem [level=1] [ref=e733]:
+          - text: Ви обираєте освітню програму. Це може бути
+          - link "курс IT з нуля" [ref=e734] [cursor=pointer]:
+            - /url: https://foxminded.ua/start-course/
+          - text: ", або курси з айті-технологій для тих, хто вже має базові навички та досвід."
+        - listitem [level=1] [ref=e735]: Отримуєте доступ до записів відеоуроків, де детально розповідається тема. Також у вас є додаткові матеріали і всі необхідні ресурси, щоб з першого заняття почати освоювати обрану технологію.
+        - listitem [level=1] [ref=e736]: Знайомитеся з ментором, який буде супроводжувати вас на навчанні. Він перевіряє результати вашої роботи, дає рекомендації і допомагає розібратися в темі.
+        - listitem [level=1] [ref=e737]: Ви отримуєте доступ до спільноти, де можете додатково обговорювати процес навчання.
+        - listitem [level=1] [ref=e738]:
+          - link "Ментор" [ref=e739] [cursor=pointer]:
+            - /url: https://foxminded.ua/mentoring-course/
+          - text: відстежує ваші успіхи, дає рекомендації, спираючись на реальні вимоги роботодавців і клієнтів. Ви отримуєте не просто навички, а актуальний практичний досвід.
+      - paragraph [ref=e740]: Неважливо, чи це буде курс python або курси html, на кожній освітній програмі є свій ментор рівня Middle або Senior.
+      - heading "Особливості навчання в FoxmindEd" [level=2] [ref=e741]
+      - paragraph [ref=e742]: Наша школа IT-професій готує фахівців з нуля, а також допомагає підвищити рівень кваліфікації. Після проходження навчання ви отримуєте електронний сертифікат, що підтверджує ваші навички.
+      - paragraph [ref=e743]: Весь процес навчання побудований за принципом симуляції реальної роботи в IT-компанії. Кожне завдання перевіряється ментором і ви отримуєте фідбек з рекомендаціями.
+      - paragraph [ref=e744]: "Особливості навчання в IT школі FoxmindEd наступні:"
+      - list [ref=e745]:
+        - listitem [level=1] [ref=e746]:
+          - text: 21+ освітня програма, включаючи python курс, програми з мобільної розробки, класичні курси html,
+          - link "UI/UX дизайн" [ref=e747] [cursor=pointer]:
+            - /url: https://foxminded.ua/ui-ux-design-1/
+          - text: ", програми для різних операційних систем і так далі."
+        - listitem [level=1] [ref=e748]: На кожному курсі свій ментор-практик, досвідчений фахівець, що працює в IT сфері.
+        - listitem [level=1] [ref=e749]: У нас немає теоретичних лекцій. Тільки короткі вступні та практичні насичені відеоуроки. Під час проходження ви відразу берете і робите. Результат з першого заняття.
+        - listitem [level=1] [ref=e750]: Програма кожного продукту оновлена у 2025 році відповідно до сучасних тенденцій і вимог.
+        - listitem [level=1] [ref=e751]: Наша освітня система включає кар’єрну підтримку та допомогу в працевлаштуванні.
+        - listitem [level=1] [ref=e752]: Кожне завдання є реальним кейсом з практики програмістів.
+      - paragraph [ref=e753]: Якщо ви бачите себе IT-фахівцем, курси від FoxmindEd — це один із швидких способів отримати необхідні навички та знайти роботу в IT-ніші.
+      - 'heading "Як підібрати курс з нуля: перші кроки в IT" [level=2] [ref=e754]'
+      - paragraph [ref=e755]: Даємо практичні рекомендації, як підібрати курси в айті сфері, якщо не знаєте, з чого почати.
+      - list [ref=e756]:
+        - listitem [level=1] [ref=e757]: Найпростіший спосіб — залиште заявку на нашому сайті та отримайте безкоштовну консультацію. Ми допоможемо підібрати освітню програму, спираючись на ваші стартові навички, бажання, можливості та тенденції ринку.
+        - listitem [level=1] [ref=e758]: Якщо ви хочете самостійно розібратися і зрозуміти, який з вас вийде IT-фахівець, курси потрібно відкласти на наступний крок. Ми розробили недорогу освітню програму, яка швидко вводить в суть програмування і дозволяє вам визначитися, до чого прагнути.
+        - listitem [level=1] [ref=e759]: Перегляньте актуальні вакансії на Dou, Djinni, Work UA та інших сервісах. Оцініть вимоги до фахівця, зарплатні можливості, конкуренцію та потенціал. Ви побачите, що наші курси на it-фахівця повністю відповідають ринку вакансій.
+      - paragraph [ref=e760]: Зробити перші кроки ви можете самостійно. В інтернеті повно доступної інформації з будь-якого напрямку. Але досвід менторства, практичність і реальні завдання, підтримка спільноти однодумців, згрупований покроковий контент — це те, за чим приходять вчитися на курси айті-фахівців від FoxmindEd.
+      - heading "Де пройти курс IT з нуля" [level=2] [ref=e761]
+      - paragraph [ref=e762]: "В IT школі FoxmindEd навчання проходить онлайн. Перебуваючи в будь-якому місці, ви можете записатися на професійні курси: Київ, Харків, Львів, Одеса, Ужгород. Тільки якщо ви не з рф або рб. Навчайтеся з будь-якої точки світу, займайтеся, коли вам комфортно, прокачуйте свої навички разом з FoxmindEd."
+  - generic [ref=e764]:
+    - img [ref=e765]
+    - generic [ref=e766]:
+      - generic [ref=e767]: Хочете бути на крок попереду?
+      - generic [ref=e768]: Підпишіться на наш Телеграм-бот або Email-розсилку. Ми будемо тримати вас у курсі лише найважливіших подій. Без спаму.
+      - generic [ref=e770]:
+        - generic [ref=e771]:
+          - status
+          - list
+        - form "Контактна форма" [ref=e772]:
+          - paragraph [ref=e773]:
+            - textbox "e-mail" [ref=e775]
+            - button "Відправити" [ref=e776] [cursor=pointer]
+          - generic [ref=e777]:
+            - generic [ref=e778]: "Alternative:"
+            - textbox [ref=e779]
+      - generic [ref=e780]:
+        - generic [ref=e781]:
+          - generic [ref=e782]: Підписуйтеся та отримайте подарунок
+          - img [ref=e783]
+        - link "Telegram" [ref=e785] [cursor=pointer]:
+          - /url: https://tg.pulse.is/foxminded_events_bot?start=69035f058622f9b5b201b9a3
+  - contentinfo [ref=e786]:
+    - generic [ref=e787]:
+      - generic [ref=e788]:
+        - generic [ref=e789]:
+          - generic [ref=e790]: Курси
+          - generic [ref=e791]:
+            - link "Стартові IТ-курси" [ref=e792] [cursor=pointer]:
+              - /url: https://foxminded.ua/start-course-2/
+            - link "Менторинг" [ref=e793] [cursor=pointer]:
+              - /url: https://foxminded.ua/junior-course/
+            - link "Стажування на IT-проекті" [ref=e794] [cursor=pointer]:
+              - /url: https://foxminded.ua/obuchenie-na-proekte-1/
+            - link "Три кроки до розробника" [ref=e795] [cursor=pointer]:
+              - /url: https://foxminded.ua/strong-junior/
+            - link "Пробна співбесіда" [ref=e796] [cursor=pointer]:
+              - /url: https://foxminded.ua/trial_interview-1/
+            - link "Курси для middle/senior" [ref=e797] [cursor=pointer]:
+              - /url: https://foxminded.ua/advanced-courses/
+            - link "Кар'єрне консультування" [ref=e798] [cursor=pointer]:
+              - /url: https://foxminded.ua/career-counseling-1/
+        - generic [ref=e799]:
+          - generic [ref=e800]: Більше
+          - generic [ref=e801]:
+            - link "Події" [ref=e802] [cursor=pointer]:
+              - /url: https://foxminded.ua/meropriyatiya-1-1/
+            - link "Оплата" [ref=e803] [cursor=pointer]:
+              - /url: https://foxminded.ua/oplata-obucheniya-2-1/
+            - link "FoxmindEd магазин" [ref=e804] [cursor=pointer]:
+              - /url: https://shop.foxminded.ua/uk
+        - generic [ref=e805]:
+          - generic [ref=e806]: Контакти
+          - link "Email info@foxminded.ua" [ref=e808] [cursor=pointer]:
+            - /url: mailto:info@foxminded.ua
+            - img "Email" [ref=e809]
+            - text: info@foxminded.ua
+        - generic [ref=e810]:
+          - generic [ref=e811]:
+            - link "+38 073 588 01 37" [ref=e812] [cursor=pointer]:
+              - /url: tel:+380735880137
+            - link "+48 45 956 99 69" [ref=e813] [cursor=pointer]:
+              - /url: tel:+48459569969
+            - link "+38 098 409 12 67" [ref=e814] [cursor=pointer]:
+              - /url: tel:+380984091267
+            - link "+38 063 802 27 25" [ref=e815] [cursor=pointer]:
+              - /url: tel:+380638022725
+          - generic [ref=e816]:
+            - link [ref=e817] [cursor=pointer]:
+              - /url: https://t.me/foxminded_learning_bot
+              - img [ref=e818]
+            - link [ref=e820] [cursor=pointer]:
+              - /url: viber://chat?number=%2B380638022725
+              - img [ref=e821]
+      - generic [ref=e824]:
+        - generic [ref=e825]: All rights reserved. FoxmindEd, 2025
+        - link "Політика конфіденційності" [ref=e826] [cursor=pointer]:
+          - /url: https://foxminded.ua/polytyka-konfydentsyalnosty-1/
+        - link "Публічна оферта" [ref=e827] [cursor=pointer]:
+          - /url: https://foxminded.ua/offerta-1/
+        - generic [ref=e828]:
+          - link [ref=e829] [cursor=pointer]:
+            - /url: https://www.youtube.com/@Nemchynskyi
+            - img [ref=e830]
+          - link [ref=e833] [cursor=pointer]:
+            - /url: https://t.me/foxminded_learning_bot
+            - img [ref=e834]
+          - link [ref=e836] [cursor=pointer]:
+            - /url: https://www.facebook.com/foxmindedco/
+            - img [ref=e837]
+          - link [ref=e839] [cursor=pointer]:
+            - /url: https://www.instagram.com/foxminded.ua/
+            - img [ref=e840]
+          - link [ref=e843] [cursor=pointer]:
+            - /url: https://www.tiktok.com/@foxminded_ua
+            - img [ref=e844]
+          - link [ref=e846] [cursor=pointer]:
+            - /url: https://ua.linkedin.com/school/foxminded/
+            - img [ref=e847]

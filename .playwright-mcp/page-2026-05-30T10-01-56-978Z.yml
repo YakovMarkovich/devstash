@@ -1,0 +1,358 @@
+- generic [active] [ref=e1]:
+  - region [ref=e3]:
+    - generic [ref=e5]:
+      - heading [level=2]
+      - generic [ref=e6]:
+        - paragraph [ref=e8]: Ми використовуємо файли cookie, щоб покращити взаємодію з користувачем
+        - generic [ref=e9]:
+          - button "Налаштувати" [ref=e10] [cursor=pointer]
+          - button "Прийняти всі" [ref=e11] [cursor=pointer]
+  - banner [ref=e12]:
+    - generic [ref=e15]:
+      - link [ref=e16] [cursor=pointer]:
+        - /url: /
+      - link "Особистий кабінет" [ref=e19] [cursor=pointer]:
+        - /url: https://my.foxminded.ua/login/
+        - img "Особистий кабінет" [ref=e20]
+  - generic [ref=e26]:
+    - generic [ref=e27]: Стартові ІТ-курси
+    - link "Менторинг" [ref=e28] [cursor=pointer]:
+      - /url: /junior-course/
+    - link "Стажування на ІТ-проекті" [ref=e29] [cursor=pointer]:
+      - /url: /obuchenie-na-proekte-1/
+    - link "Пробна співбесіда" [ref=e30] [cursor=pointer]:
+      - /url: /trial_interview-1/
+    - link "Кар’єрне консультування" [ref=e31] [cursor=pointer]:
+      - /url: /career-counseling-1/
+  - generic [ref=e34]:
+    - generic [ref=e36]:
+      - heading "Стартові курси" [level=1] [ref=e37]
+      - paragraph [ref=e38]:
+        - strong [ref=e39]: Стартові ІТ-курси
+        - text: – це вивчення основ мови програмування, які дозволять вам практично спробувати мову програмування, розвиватися далі самостійно або на наших
+        - link "курсах Менторингу." [ref=e40] [cursor=pointer]:
+          - /url: /junior-course/
+      - paragraph [ref=e41]: Підходять для новачків в ІТ.
+      - paragraph [ref=e42]: Отримуйте доступ до відеолекцій і завдань, а також допомогу в чаті.
+    - img [ref=e44]
+  - generic [ref=e47]:
+    - 'link "Кодерський навігатор: курс по вибору мови програмування Зрозумієте, яку мову програмування обрати і куди рухатись далі в кар’єрі. Ви освоїте основи 4 популярних мов: Java, Python, JavaScript та C++ і дізнаєтеся, як вибрати шлях у фронтенді чи бекенді. Повертаємо повну вартість курсу при купівлі будь якого стартового курсу! 499 грн | 12 USD Докладніше про курс" [ref=e48] [cursor=pointer]':
+      - /url: https://foxminded.ua/start-kurs-vybir-movy-prohramuvannia/
+      - generic [ref=e49]:
+        - generic [ref=e50]:
+          - text: "Кодерський навігатор:"
+          - generic [ref=e51]: курс по вибору мови програмування
+        - generic [ref=e52]: "Зрозумієте, яку мову програмування обрати і куди рухатись далі в кар’єрі. Ви освоїте основи 4 популярних мов: Java, Python, JavaScript та C++ і дізнаєтеся, як вибрати шлях у фронтенді чи бекенді."
+        - generic [ref=e53]: Повертаємо повну вартість курсу при купівлі будь якого стартового курсу!
+      - generic [ref=e54]:
+        - generic [ref=e56]: 499 грн | 12 USD
+        - generic [ref=e57]: Докладніше про курс
+    - 'link "Колекція стартових курсів + курс в Колекція стартових курсів – це всі стартові курси в одному пакеті: Java Start, C# START, Python Start, C++ Start, Swift Start, JavaScript Start зі знижкою 50%. Також даруємо курс Кодерський навігатор: курс по вибору мови програмування від Сергія Немчинського 7500 грн | 210 USD 15000 грн | 420 USD Докладніше про колекцію" [ref=e58] [cursor=pointer]':
+      - /url: https://foxminded.ua/start-courses-collection/
+      - generic [ref=e59]:
+        - generic [ref=e61]: Колекція стартових курсів + курс в
+        - generic [ref=e63]: "Колекція стартових курсів – це всі стартові курси в одному пакеті: Java Start, C# START, Python Start, C++ Start, Swift Start, JavaScript Start зі знижкою 50%. Також даруємо курс Кодерський навігатор: курс по вибору мови програмування від Сергія Немчинського"
+      - generic [ref=e64]:
+        - generic [ref=e65]:
+          - generic [ref=e66]: 7500 грн | 210 USD
+          - generic [ref=e67]: 15000 грн | 420 USD
+        - generic [ref=e68]: Докладніше про колекцію
+    - link "Java Start Навчитеся писати базові програми, опануєте фундаментальні принципи мови та зрозумієте, як застосовувати їх на практиці. 2500 грн | 70 USD Докладніше про курс" [ref=e69] [cursor=pointer]:
+      - /url: https://foxminded.ua/kurs-java-start/
+      - generic [ref=e70]:
+        - generic [ref=e71]: Java Start
+        - generic [ref=e72]: Навчитеся писати базові програми, опануєте фундаментальні принципи мови та зрозумієте, як застосовувати їх на практиці.
+      - generic [ref=e73]:
+        - generic [ref=e75]: 2500 грн | 70 USD
+        - generic [ref=e76]: Докладніше про курс
+    - link "Java Tools Опануєте основні інструменти Java, будете впевнено тестувати та вдосконалювати ваші проєкти. 2750 грн | 77 USD Докладніше про курс" [ref=e77] [cursor=pointer]:
+      - /url: https://foxminded.ua/trening-instrumentaryj-java-1/
+      - generic [ref=e78]:
+        - generic [ref=e79]: Java Tools
+        - generic [ref=e80]: Опануєте основні інструменти Java, будете впевнено тестувати та вдосконалювати ваші проєкти.
+      - generic [ref=e81]:
+        - generic [ref=e83]: 2750 грн | 77 USD
+        - generic [ref=e84]: Докладніше про курс
+    - link "Python Start Навчитеся писати базові програми на мові Python, будете розуміти та вміти застосовувати основні концепції та принципи цієї мови. 2500 грн | 70 USD Докладніше про курс" [ref=e85] [cursor=pointer]:
+      - /url: https://foxminded.ua/python-start-1/
+      - generic [ref=e86]:
+        - generic [ref=e87]: Python Start
+        - generic [ref=e88]: Навчитеся писати базові програми на мові Python, будете розуміти та вміти застосовувати основні концепції та принципи цієї мови.
+      - generic [ref=e89]:
+        - generic [ref=e91]: 2500 грн | 70 USD
+        - generic [ref=e92]: Докладніше про курс
+    - link "Python Tools Опануєте Python інструментарій, навчитеся створювати та тестувати безпечні веб-додатки. 2750 грн | 77 USD Докладніше про курс" [ref=e93] [cursor=pointer]:
+      - /url: https://foxminded.ua/python-tools/
+      - generic [ref=e94]:
+        - generic [ref=e95]: Python Tools
+        - generic [ref=e96]: Опануєте Python інструментарій, навчитеся створювати та тестувати безпечні веб-додатки.
+      - generic [ref=e97]:
+        - generic [ref=e99]: 2750 грн | 77 USD
+        - generic [ref=e100]: Докладніше про курс
+    - link "C# Start Будете писати прості програми на C#, яка використовується для розробки ігор, мобільних і десктопних додатків та інтернету речей. 2500 грн | 70 USD Докладніше про курс" [ref=e101] [cursor=pointer]:
+      - /url: https://foxminded.ua/cs-start-1/
+      - generic [ref=e102]:
+        - generic [ref=e103]: C# Start
+        - generic [ref=e104]: Будете писати прості програми на C#, яка використовується для розробки ігор, мобільних і десктопних додатків та інтернету речей.
+      - generic [ref=e105]:
+        - generic [ref=e107]: 2500 грн | 70 USD
+        - generic [ref=e108]: Докладніше про курс
+    - link "JavaScript Start Навчитеся писати найпростіші програми на JavaScript, яка використовується для створення сайтів і веб-додатків. 2500 грн | 70 USD Докладніше про курс" [ref=e109] [cursor=pointer]:
+      - /url: https://foxminded.ua/javascript-start/
+      - generic [ref=e110]:
+        - generic [ref=e111]: JavaScript Start
+        - generic [ref=e112]: Навчитеся писати найпростіші програми на JavaScript, яка використовується для створення сайтів і веб-додатків.
+      - generic [ref=e113]:
+        - generic [ref=e115]: 2500 грн | 70 USD
+        - generic [ref=e116]: Докладніше про курс
+    - link "Swift Start Навчитеся писати найпростіші програми на Swift, яка використовується для створення додатків для iOS, macOS, watchOS і tvOS. 2500 грн | 70 USD Докладніше про курс" [ref=e117] [cursor=pointer]:
+      - /url: https://foxminded.ua/swift-start/
+      - generic [ref=e118]:
+        - generic [ref=e119]: Swift Start
+        - generic [ref=e120]: Навчитеся писати найпростіші програми на Swift, яка використовується для створення додатків для iOS, macOS, watchOS і tvOS.
+      - generic [ref=e121]:
+        - generic [ref=e123]: 2500 грн | 70 USD
+        - generic [ref=e124]: Докладніше про курс
+    - link "C++ Start Навчитеся писати базові програми на C++, яку використовують для створення швидких і надійних додатків, ігор та програмного забезпечення. 2500 грн | 70 USD Докладніше про курс" [ref=e125] [cursor=pointer]:
+      - /url: https://foxminded.ua/cplusplus-start/
+      - generic [ref=e126]:
+        - generic [ref=e127]: C++ Start
+        - generic [ref=e128]: Навчитеся писати базові програми на C++, яку використовують для створення швидких і надійних додатків, ігор та програмного забезпечення.
+      - generic [ref=e129]:
+        - generic [ref=e131]: 2500 грн | 70 USD
+        - generic [ref=e132]: Докладніше про курс
+  - generic [ref=e134]:
+    - heading "Для кого?" [level=2] [ref=e135]
+    - generic [ref=e136]:
+      - generic [ref=e137]:
+        - generic [ref=e138]:
+          - generic [ref=e139]: "01"
+          - heading "Світчерам з інших професій" [level=3] [ref=e140]
+        - generic [ref=e141]: Люди, які бажають змінити свою професійну сферу діяльності на одну із ІТ спеціальностей та знайти високооплачувану роботу в галузі програмування.
+      - generic [ref=e142]:
+        - generic [ref=e143]:
+          - generic [ref=e144]: "02"
+          - heading "Світчерам з інших IT професій" [level=3] [ref=e145]
+        - generic [ref=e146]: Люди, які працюють в IT і не є програмістами, але бажають змінити свою спеціалізацію та опанувати нові технологічні стеки мови програмування
+      - generic [ref=e147]:
+        - generic [ref=e148]:
+          - generic [ref=e149]: "03"
+          - heading "Новачкам у програмуванні" [level=3] [ref=e150]
+        - generic [ref=e151]: Для тих, хто не має жодного досвіду у програмуванні. Для тих, кому складно уявити в голові програму складнішу ніж HelloWorld.
+      - generic [ref=e152]:
+        - generic [ref=e153]:
+          - generic [ref=e154]: "04"
+          - heading "Охочих навчатися з ментором" [level=3] [ref=e155]
+        - generic [ref=e156]: Для тих, хто хоче навчатись на подальших курсах менторингу, але розуміє, що його знань для цього формату поки недостатньо.
+    - generic [ref=e157] [cursor=pointer]: Отримати безкоштовну консультацію
+  - generic [ref=e159]:
+    - heading "Формат та вимоги" [level=2] [ref=e160]
+    - generic [ref=e161]:
+      - generic [ref=e162]:
+        - generic [ref=e163]: "Формат:"
+        - generic [ref=e164]:
+          - img [ref=e166]
+          - generic [ref=e167]: Відеоуроки з теорією
+        - generic [ref=e168]:
+          - img [ref=e170]
+          - generic [ref=e171]: Практичні завдання
+        - generic [ref=e172]:
+          - img [ref=e174]
+          - generic [ref=e175]: Online навчання в зручний для вас час
+        - generic [ref=e176]:
+          - img [ref=e178]
+          - generic [ref=e179]: Допомога в чаті Zulip
+      - generic [ref=e180]:
+        - generic [ref=e181]: "Вимоги:"
+        - generic [ref=e182]:
+          - img [ref=e184]
+          - generic [ref=e185]: Знання ПК на рівні користувача
+  - generic [ref=e187]:
+    - heading "Нас часто питають:" [level=2] [ref=e189]
+    - generic [ref=e190]:
+      - generic [ref=e192]:
+        - generic [ref=e195] [cursor=pointer]:
+          - generic [ref=e196]: "[ 1 ]"
+          - generic [ref=e197]: Які курси підійдуть, якщо я хочу навчатися програмуванню з нуля?
+        - generic [ref=e201] [cursor=pointer]:
+          - generic [ref=e202]: "[ 2 ]"
+          - generic [ref=e203]: Скільки триває навчання на старті та як швидко я побачу результат?
+        - generic [ref=e207] [cursor=pointer]:
+          - generic [ref=e208]: "[ 3 ]"
+          - generic [ref=e209]: Чи є у FoxmindEd менторинг «один на один» і щоденні рев’ю коду?
+        - generic [ref=e213] [cursor=pointer]:
+          - generic [ref=e214]: "[ 4 ]"
+          - generic [ref=e215]: Що я додам у резюме після навчання з нуля?
+        - generic [ref=e219] [cursor=pointer]:
+          - generic [ref=e220]: "[ 5 ]"
+          - generic [ref=e221]: Чи реально знайти першу роботу без комерційного досвіду?
+      - generic [ref=e223]:
+        - generic [ref=e224]: Залишились питання?
+        - img [ref=e225]
+        - link "Безкоштовна консультація" [ref=e227] [cursor=pointer]:
+          - /url: ""
+  - generic [ref=e231]:
+    - heading "Навчання IT з нуля у FoxmindEd" [level=2] [ref=e232]
+    - generic [ref=e233]:
+      - paragraph [ref=e234]: "Чи хочете ви зайти в сферу ІТ без багатомісячних «прелюдій», одразу писати код і збирати перші результати? У цьому вам допоможе FoxmindEd, адже тут ви працюєте за прозорою траєкторією Start — Mentoring — Project: спершу закриваєте базу на коротких стартових курсах, далі рухаєтесь у формат 1-на-1 з ментором, а потім показуєте «дорослий» результат у вигляді репозиторію, невеликого сервісу чи проєкту. Акцент у нас зосереджено на практиці, коротких ітераціях і підтримці, а не на довгих лекціях."
+      - heading "Що ви опануєте на курсах" [level=2] [ref=e235]
+      - paragraph [ref=e236]: "Ви починаєте зі Start-курсів: короткі відео, практичні завдання після кожного уроку, зручний темп і доступ онлайн. Формат спеціально зібраний для новачків, щоб ви не зациклюватися на теорії й одразу бачили робочий результат у коді. На сторінці стартових курсів це сформульовано прямо: жива практика і зрозумілий маршрут у менторинг."
+      - paragraph [ref=e237]: "Після старту ви переходите в менторинг 1-на-1: отримуєте завдання, здаєте рішення, забираєте правки, рухаєтесь далі короткими кроками. У фокусі — конкретні навички розробника (Git, фреймворки, бази, тести, деплой), а не «красиві слайди»."
+      - heading "Як побудована траєкторія навчання" [level=2] [ref=e238]
+      - list [ref=e239]:
+        - listitem [level=1] [ref=e240]: Start. Ви ставите середовище, вивчаєте синтаксис і відразу закріплюєте все практикою. Якщо код зібрався — ідете далі, якщо «спотикнулись» — звертаєтесь у спільноту (наприклад, через Zulip) і виправляєте.
+        - listitem [level=1] [ref=e241]: "Mentoring. Ви працюєте з інженером-практиком 1-на-1: коротке пояснення — реалізація — code review — доробка. Така логіка у нас побудована для того, щоб учні отримували менше теорії і замість цього більше працювали з корисним кодом."
+        - listitem [level=1] [ref=e242]: "Project. Ви збираєте невеликий, але цілісний результат: репозиторій, тестове покриття, інструкції запуску, елементарний деплой. Саме ці елементи цінні на співбесіді."
+      - heading "Кому це підійде" [level=2] [ref=e243]
+      - list [ref=e244]:
+        - listitem [level=1] [ref=e245]: Світчерам із не-ІТ і суміжних ролей — щоб опанувати сферу без зубріння теорії;
+        - listitem [level=1] [ref=e246]: "Джуніор-інженерам, яким бракує інструментарію: Git, тести, фреймворки, деплой;"
+        - listitem [level=1] [ref=e247]: QA/DevOps/BA, які хочуть підтягнути код і навчитися використовувати інструменти у робочих задачах.
+      - paragraph [ref=e248]: "Основна ціль — не просто «знати мову», а працювати як розробник: збирати сервіс, підключати БД, писати тести й віддавати артефакти, яким довіряє команда."
+      - heading "Що саме ви робите на старті" [level=2] [ref=e249]
+      - paragraph [ref=e250]:
+        - text: На конкретному прикладі
+        - link "Python Start" [ref=e251] [cursor=pointer]:
+          - /url: https://foxminded.ua/python-start-1/
+        - text: ": короткі уроки, практика після кожного кроку, підтримка в чаті, безстроковий доступ і типовий темп 3–4 тижні (за годину на день). Мета — швидко поставити базу і підготуватися до менторингу. Аналогічний підхід і в інших напрямах: ви вмикаєте інструменти (наприклад, Git/GitLab), пишете юніт-тести, піднімаєте БД і вчитеся «заводити» сервіс, а не просто читати про нього."
+      - heading "Менторинг 1-на-1 — як це працює" [level=2] [ref=e252]
+      - paragraph [ref=e253]: "Ви ставите питання, отримуєте завдання, здаєте код, та отримуєте детальний фідбек: що поліпшити, де додати тести, як переробити структуру тощо. У стандартному пакеті включено щоденне code review, у розширеному (Mentoring+) доступні підсилення на вибір: більше рев’ю на день, кастомізація програми або фіксований час зв’язку."
+      - heading "Як почати навчання" [level=2] [ref=e254]
+      - paragraph [ref=e255]:
+        - text: "Спочатку оберіть мову, з якою плануєте працювати у подальшому: Python (автоматизація, веб),"
+        - link "JavaScript" [ref=e256] [cursor=pointer]:
+          - /url: https://foxminded.ua/javascript-start/
+        - text: /Node.js (веб, боти),
+        - link "Java" [ref=e257] [cursor=pointer]:
+          - /url: https://foxminded.ua/kurs-java-start/
+        - text: (бекенд-сервіси),
+        - link "QA Automation" [ref=e258] [cursor=pointer]:
+          - /url: https://foxminded.ua/quality-assurance-1/
+        - text: (тести, фреймворки) тощо. Потім відкрийте сторінку відповідного Start-курсу і натисніть на форму «Записатися на курс». Після цього залиште свої контактні дані і натисніть «Залишити заявку».
+  - link "foxmindED Як обрати Java, Python, JS чи C++ ? Курс \"Кодерський Навігатор\" ваш тест-драйв за 499 грн." [ref=e261] [cursor=pointer]:
+    - /url: https://foxminded.ua/start-kurs-vybir-movy-prohramuvannia/?utm_source=header
+    - img "foxmindED" [ref=e262]
+    - generic [ref=e263]: Як обрати Java, Python, JS чи C++ ? Курс "Кодерський Навігатор" ваш тест-драйв за 499 грн.
+    - img [ref=e265]
+  - generic [ref=e268]:
+    - img [ref=e269]
+    - generic [ref=e270]:
+      - generic [ref=e271]: Хочете бути на крок попереду?
+      - generic [ref=e272]: Підпишіться на наш Телеграм-бот або Email-розсилку. Ми будемо тримати вас у курсі лише найважливіших подій. Без спаму.
+      - generic [ref=e274]:
+        - generic [ref=e275]:
+          - status
+          - list
+        - form "Контактна форма" [ref=e276]:
+          - paragraph [ref=e277]:
+            - textbox "e-mail" [ref=e279]
+            - button "Відправити" [ref=e280] [cursor=pointer]
+          - generic [ref=e281]:
+            - generic [ref=e282]: "Alternative:"
+            - textbox [ref=e283]
+      - generic [ref=e284]:
+        - generic [ref=e285]:
+          - generic [ref=e286]: Підписуйтеся та отримайте подарунок
+          - img [ref=e287]
+        - link "Telegram" [ref=e289] [cursor=pointer]:
+          - /url: https://tg.pulse.is/foxminded_events_bot?start=69035f058622f9b5b201b9a3
+  - contentinfo [ref=e290]:
+    - generic [ref=e291]:
+      - generic [ref=e292]:
+        - generic [ref=e293]:
+          - generic [ref=e294]: Курси
+          - generic [ref=e295]:
+            - link "Стартові IТ-курси" [ref=e296] [cursor=pointer]:
+              - /url: https://foxminded.ua/start-course-2/
+            - link "Менторинг" [ref=e297] [cursor=pointer]:
+              - /url: https://foxminded.ua/junior-course/
+            - link "Стажування на IT-проекті" [ref=e298] [cursor=pointer]:
+              - /url: https://foxminded.ua/obuchenie-na-proekte-1/
+            - link "Три кроки до розробника" [ref=e299] [cursor=pointer]:
+              - /url: https://foxminded.ua/strong-junior/
+            - link "Пробна співбесіда" [ref=e300] [cursor=pointer]:
+              - /url: https://foxminded.ua/trial_interview-1/
+            - link "Курси для middle/senior" [ref=e301] [cursor=pointer]:
+              - /url: https://foxminded.ua/advanced-courses/
+            - link "Кар'єрне консультування" [ref=e302] [cursor=pointer]:
+              - /url: https://foxminded.ua/career-counseling-1/
+        - generic [ref=e303]:
+          - generic [ref=e304]: Більше
+          - generic [ref=e305]:
+            - link "Події" [ref=e306] [cursor=pointer]:
+              - /url: https://foxminded.ua/meropriyatiya-1-1/
+            - link "Оплата" [ref=e307] [cursor=pointer]:
+              - /url: https://foxminded.ua/oplata-obucheniya-2-1/
+            - link "FoxmindEd магазин" [ref=e308] [cursor=pointer]:
+              - /url: https://shop.foxminded.ua/uk
+        - generic [ref=e309]:
+          - generic [ref=e310]: Контакти
+          - link "Email info@foxminded.ua" [ref=e312] [cursor=pointer]:
+            - /url: mailto:info@foxminded.ua
+            - img "Email" [ref=e313]
+            - text: info@foxminded.ua
+        - generic [ref=e314]:
+          - generic [ref=e315]:
+            - link "+38 073 588 01 37" [ref=e316] [cursor=pointer]:
+              - /url: tel:+380735880137
+            - link "+48 45 956 99 69" [ref=e317] [cursor=pointer]:
+              - /url: tel:+48459569969
+            - link "+38 098 409 12 67" [ref=e318] [cursor=pointer]:
+              - /url: tel:+380984091267
+            - link "+38 063 802 27 25" [ref=e319] [cursor=pointer]:
+              - /url: tel:+380638022725
+          - generic [ref=e320]:
+            - link [ref=e321] [cursor=pointer]:
+              - /url: https://t.me/foxminded_learning_bot
+              - img [ref=e322]
+            - link [ref=e324] [cursor=pointer]:
+              - /url: viber://chat?number=%2B380638022725
+              - img [ref=e325]
+      - generic [ref=e328]:
+        - generic [ref=e329]: All rights reserved. FoxmindEd, 2025
+        - link "Політика конфіденційності" [ref=e330] [cursor=pointer]:
+          - /url: https://foxminded.ua/polytyka-konfydentsyalnosty-1/
+        - link "Публічна оферта" [ref=e331] [cursor=pointer]:
+          - /url: https://foxminded.ua/offerta-1/
+        - generic [ref=e332]:
+          - link [ref=e333] [cursor=pointer]:
+            - /url: https://www.youtube.com/@Nemchynskyi
+            - img [ref=e334]
+          - link [ref=e337] [cursor=pointer]:
+            - /url: https://t.me/foxminded_learning_bot
+            - img [ref=e338]
+          - link [ref=e340] [cursor=pointer]:
+            - /url: https://www.facebook.com/foxmindedco/
+            - img [ref=e341]
+          - link [ref=e343] [cursor=pointer]:
+            - /url: https://www.instagram.com/foxminded.ua/
+            - img [ref=e344]
+          - link [ref=e347] [cursor=pointer]:
+            - /url: https://www.tiktok.com/@foxminded_ua
+            - img [ref=e348]
+          - link [ref=e350] [cursor=pointer]:
+            - /url: https://ua.linkedin.com/school/foxminded/
+            - img [ref=e351]
+  - generic:
+    - main:
+      - generic [ref=e361]:
+        - img [ref=e364] [cursor=pointer]
+        - generic [ref=e366]:
+          - generic [ref=e367]:
+            - generic [ref=e370]:
+              - paragraph [ref=e371]:
+                - strong [ref=e373]: Підпишіться та скачайте корисний матеріал про мови програмування.
+              - paragraph [ref=e374]:
+                - strong [ref=e376]: Це те, що потрібно знати всім початківцям!
+            - textbox "Введіть ваш email" [ref=e380]
+            - button "Отримати подарунок на пошту" [ref=e383] [cursor=pointer]
+          - link "Speed up your sales with SendPulse" [ref=e385] [cursor=pointer]:
+            - /url: https://sendpulse.com/en/features/pop-up/?utm_source=foxminded.ua&utm_medium=poweredby&utm_campaign=popup
+            - generic [ref=e386]: Speed up your sales with SendPulse
+      - paragraph
+      - strong
+      - emphasis
+      - heading [level=1]
+      - heading [level=2]
+      - heading [level=3]
+      - heading [level=4]
