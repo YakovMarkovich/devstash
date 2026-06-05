@@ -17,20 +17,22 @@ interface Item {
   isPinned: boolean;
   itemType: ItemType;
   tags: string[];
-  createdAt: Date;
+  createdAt: Date | string;
 }
 
 interface ItemCardProps {
   item: Item;
+  onClick?: () => void;
 }
 
-export function ItemCard({ item }: ItemCardProps) {
+export function ItemCard({ item, onClick }: ItemCardProps) {
   const Icon = getTypeIcon(item.itemType.icon);
 
   return (
     <div
       className="flex gap-3 p-3 rounded-lg border border-border bg-card hover:bg-accent/30 transition-colors cursor-pointer border-l-[3px]"
       style={{ borderLeftColor: item.itemType.color }}
+      onClick={onClick}
     >
       <div className="shrink-0 mt-0.5">
         {Icon && <Icon className="h-4 w-4" style={{ color: item.itemType.color }} />}

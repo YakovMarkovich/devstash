@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { auth } from '@/auth';
 import { Sidebar } from '@/components/dashboard/Sidebar';
-import { ItemCard } from '@/components/dashboard/ItemCard';
+import { ItemsClientWrapper } from '@/components/dashboard/ItemsClientWrapper';
 import { getItemsByType, getItemTypes } from '@/lib/db/items';
 import { getSidebarCollections } from '@/lib/db/collections';
 import { getTypeIcon } from '@/lib/icons';
@@ -48,11 +48,10 @@ export default async function ItemsTypePage({ params }: Props) {
               <p className="text-muted-foreground">No {itemType.name}s yet</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-              {items.map((item) => (
-                <ItemCard key={item.id} item={item} />
-              ))}
-            </div>
+            <ItemsClientWrapper
+              items={items}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3"
+            />
           )}
         </div>
       </main>

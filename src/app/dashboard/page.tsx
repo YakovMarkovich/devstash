@@ -1,9 +1,8 @@
-import { Pin } from 'lucide-react';
 import { auth } from '@/auth';
 import { Sidebar } from '@/components/dashboard/Sidebar';
 import { StatsCards } from '@/components/dashboard/StatsCards';
 import { CollectionCard } from '@/components/dashboard/CollectionCard';
-import { ItemCard } from '@/components/dashboard/ItemCard';
+import { DashboardItems } from '@/components/dashboard/DashboardItems';
 import { getRecentCollections, getCollectionStats, getItemStats, getSidebarCollections } from '@/lib/db/collections';
 import { getPinnedItems, getRecentItems, getItemTypes } from '@/lib/db/items';
 
@@ -53,28 +52,7 @@ export default async function DashboardPage() {
             </div>
           </section>
 
-          {pinnedItems.length > 0 && (
-            <section>
-              <div className="flex items-center gap-2 mb-4">
-                <Pin className="h-4 w-4 text-muted-foreground" />
-                <h2 className="font-semibold">Pinned</h2>
-              </div>
-              <div className="space-y-2">
-                {pinnedItems.map((item) => (
-                  <ItemCard key={item.id} item={item} />
-                ))}
-              </div>
-            </section>
-          )}
-
-          <section>
-            <h2 className="font-semibold mb-4">Recent Items</h2>
-            <div className="space-y-2">
-              {recentItems.map((item) => (
-                <ItemCard key={item.id} item={item} />
-              ))}
-            </div>
-          </section>
+          <DashboardItems pinnedItems={pinnedItems} recentItems={recentItems} />
         </div>
       </main>
     </>

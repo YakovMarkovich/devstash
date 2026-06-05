@@ -48,7 +48,7 @@ export interface ItemWithType {
   isPinned: boolean;
   itemType: ItemTypeInfo;
   tags: string[];
-  createdAt: Date;
+  createdAt: Date | string;
 }
 
 function mapItem(item: {
@@ -107,6 +107,61 @@ export async function getRecentItems(limit = 10): Promise<ItemWithType[]> {
 export interface ItemsByTypeResult {
   itemType: ItemTypeInfo;
   items: ItemWithType[];
+}
+
+export interface ItemDetail extends ItemWithType {
+  content: string | null;
+  contentType: string;
+  url: string | null;
+  fileUrl: string | null;
+  fileName: string | null;
+  fileSize: number | null;
+  language: string | null;
+  collections: { id: string; name: string }[];
+  updatedAt: Date | string;
+}
+
+export async function getItemDetail(id: string): Promise<ItemDetail | null> {
+  const item = await prisma.item.findFirst({
+    where: { id },
+    include: {
+      itemType: true,
+      tags: true,
+      collections: {
+        include: { collection: { select: { id: true, name: true } } },
+      },
+    },
+  });
+
+  if (!item) return null;
+
+  return {
+    id: item.id,
+    title: item.title,
+    description: item.description,
+    isFavorite: item.isFavorite,
+    isPinned: item.isPinned,
+    content: item.content,
+    contentType: item.contentType,
+    url: item.url,
+    fileUrl: item.fileUrl,
+    fileName: item.fileName,
+    fileSize: item.fileSize,
+    language: item.language,
+    itemType: {
+      id: item.itemType.id,
+      name: item.itemType.name,
+      icon: item.itemType.icon,
+      color: item.itemType.color,
+    },
+    tags: item.tags.map((t) => t.name),
+    collections: item.collections.map((ic) => ({
+      id: ic.collection.id,
+      name: ic.collection.name,
+    })),
+    createdAt: item.createdAt,
+    updatedAt: item.updatedAt,
+  };
 }
 
 export async function getItemsByType(slug: string): Promise<ItemsByTypeResult | null> {
