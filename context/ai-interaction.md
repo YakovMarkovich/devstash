@@ -15,7 +15,7 @@ This is the common workflow that we will use for every single feature/fix:
 1. **Document** - Document the feature in @context/current-feature.md.
 2. **Branch** - Create new branch for feature, fix, etc
 3. **Implement** - Implement the feature/fix that I create in @context/current-feature.md
-4. **Test** - Verify it works in the browser. Implement unit testing later. Run `npm run build` and fix any errors
+4. **Test** - Verify it works in the browser. Write unit tests (`npm test`) for any new utilities or server actions. Run `npm run build` and fix any errors. All tests must pass before proceeding.
 5. **Iterate** - Iterate and change things if needed
 6. **Commit** - Only after build passes and everything works
 7. **Merge** - Merge to main
@@ -23,7 +23,7 @@ This is the common workflow that we will use for every single feature/fix:
 9. **Review** - Review AI-generated code periodically and on demand.
 10. Mark as completed in @context/current-feature.md and add to history
 
-Do NOT commit without permission and until the build passes. If build fails, fix the issues first.
+Do NOT commit without permission and until the build passes and all tests pass. If build or tests fail, fix the issues first.
 
 ## Branching
 
@@ -48,6 +48,14 @@ We will create a new branch for every feature/fix. Name branch **feature/[featur
 - Don't refactor unrelated code unless asked
 - Don't add "nice to have" features
 - Preserve existing patterns in the codebase
+
+## Unit Testing
+
+- Runner: **Vitest** (`npm test` / `npm run test:watch`)
+- Test files live next to the code they test: `src/lib/__tests__/*.test.ts`
+- Only test **utilities and server actions** — never React components
+- Use `vi.mock(...)` to stub Prisma, Redis, bcrypt, and other I/O in action tests
+- Tests must pass before committing
 
 ## Code Review
 
