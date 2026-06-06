@@ -1,18 +1,34 @@
-# Current Feature
+# Current Feature: Item Create
 
 ## Feature
 
+Add new items via a modal dialog opened from a "New Item" button in the top bar.
+
 ## Status
 
-<!-- Not Started|In Progress|Completed -->
+In Progress
 
 ## Goals
 
-<!-- Goals & requirements -->
+- A "New Item" button in the top bar opens a ShadCN `Dialog`
+- Type selector lets the user pick from: snippet, prompt, command, note, link
+- Fields shown based on selected type:
+  - All types: title (required), description, tags
+  - snippet / command: content, language
+  - prompt / note: content
+  - link: URL (required)
+- Server action `createItem` with Zod validation and ownership assignment
+- Query function `createItem` in `src/lib/db/items.ts`
+- On success: close the dialog, show a Sonner success toast, and refresh the item list (`router.refresh()`)
+- On error: show a Sonner error toast and keep the dialog open
 
 ## Notes
 
-<!-- Any extra notes -->
+- Use ShadCN `Dialog` (already installed)
+- Use existing Sonner toast setup
+- Server action lives in `src/actions/items.ts` alongside `updateItem` / `deleteItem`
+- Assign `userId` from the session inside the server action
+- Refresh pattern: `router.refresh()` (same as `updateItem`)
 
 ## History
 
@@ -39,3 +55,4 @@
 - **2026-06-05** — Item List View 3-Column Grid: updated grid in src/app/items/[type]/page.tsx from grid-cols-1 md:grid-cols-2 to grid-cols-1 md:grid-cols-2 lg:grid-cols-3; 3 columns at lg breakpoint (1024px+), 2 columns at md (768px+), 1 column on mobile
 - **2026-06-05** — Item Drawer: ShadCN Sheet opens from the right on ItemCard click; works on dashboard and items list pages; GET /api/items/[id] with auth check fetches full detail (content, collections, tags, language, dates); loading skeleton while fetching; action bar with Favorite, Pin, Copy, Edit, Delete; DashboardItems and ItemsClientWrapper client wrappers manage drawer state while server pages remain server components; formatDate widened to Date|string for JSON-serialized API dates
 - **2026-06-05** — Item Drawer Edit Mode: Edit button toggles inline edit mode in the same drawer; Save calls updateItem server action (Zod validation, ownership check, { success, data, error } return); Cancel discards; editable fields: title/description/tags for all types, content for text types, language for snippet/command, url for link; non-editable: item type, collections, dates; updateItem query in src/lib/db/items.ts handles tag disconnect/connect-or-create; router.refresh() syncs card list; zod@4 installed; ShadCN textarea added; 10 unit tests
+- **2026-06-06** — Item Delete: Delete button in item drawer opens ShadCN AlertDialog confirmation; confirming calls deleteItem server action (ownership check, Prisma delete); on success closes drawer, shows Sonner success toast, router.refresh(); on error shows Sonner error toast; 5 unit tests for deleteItem action

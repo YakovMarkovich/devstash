@@ -5,13 +5,24 @@ import { useRouter } from 'next/navigation';
 import { Star, Pin, Copy, Pencil, Trash2, FolderOpen, Calendar, X, Check } from 'lucide-react';
 import { toast } from 'sonner';
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from '@/components/ui/alert-dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Separator } from '@/components/ui/separator';
 import { getTypeIcon } from '@/lib/icons';
 import { formatDate } from '@/lib/utils';
-import { updateItem } from '@/actions/items';
+import { updateItem, deleteItem } from '@/actions/items';
 import type { ItemDetail } from '@/lib/db/items';
 
 interface ItemDrawerProps {
@@ -72,6 +83,7 @@ export function ItemDrawer({ itemId, onClose }: ItemDrawerProps) {
   const [error, setError] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [deleting, setDeleting] = useState(false);
   const [form, setForm] = useState<EditState>({
     title: '',
     description: '',
@@ -165,6 +177,20 @@ export function ItemDrawer({ itemId, onClose }: ItemDrawerProps) {
     setItem(result.data);
     setIsEditing(false);
     toast.success('Item updated');
+    router.refresh();
+  }
+
+  async function handleDelete() {
+    if (!itemId) return;
+    setDeleting(true);
+    const result = await deleteItem(itemId);
+    setDeleting(false);
+    if (!result.success) {
+      toast.error(result.error);
+      return;
+    }
+    toast.success('Item deleted');
+    onClose();
     router.refresh();
   }
 
@@ -289,14 +315,39 @@ export function ItemDrawer({ itemId, onClose }: ItemDrawerProps) {
                     Edit
                   </Button>
                   <div className="flex-1" />
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="text-destructive hover:text-destructive"
-                    aria-label="Delete"
-                  >
-                    <Trash2 className="h-4 w-4" />
-                  </Button>
+                  <AlertDialog>
+                    <AlertDialogTrigger
+                      render={
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="text-destructive hover:text-destructive"
+                          aria-label="Delete"
+                          disabled={deleting}
+                        />
+                      }
+                    >
+                      <Trash2 className="h-4 w-4" />
+                    </AlertDialogTrigger>
+                    <AlertDialogContent>
+                      <AlertDialogHeader>
+                        <AlertDialogTitle>Delete item?</AlertDialogTitle>
+                        <AlertDialogDescription>
+                          &ldquo;{item.title}&rdquo; will be permanently deleted. This cannot be
+                          undone.
+                        </AlertDialogDescription>
+                      </AlertDialogHeader>
+                      <AlertDialogFooter>
+                        <AlertDialogCancel>Cancel</AlertDialogCancel>
+                        <AlertDialogAction
+                          className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+                          onClick={handleDelete}
+                        >
+                          Delete
+                        </AlertDialogAction>
+                      </AlertDialogFooter>
+                    </AlertDialogContent>
+                  </AlertDialog>
                 </>
               )}
             </div>

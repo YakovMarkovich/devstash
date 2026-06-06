@@ -193,6 +193,43 @@ export async function getItemsByType(slug: string): Promise<ItemsByTypeResult | 
   };
 }
 
+export interface CreateItemData {
+  userId: string;
+  itemTypeId: string;
+  title: string;
+  description: string | null;
+  content: string | null;
+  url: string | null;
+  language: string | null;
+  tags: string[];
+}
+
+export async function createItem(data: CreateItemData): Promise<ItemWithType> {
+  const item = await prisma.item.create({
+    data: {
+      userId: data.userId,
+      itemTypeId: data.itemTypeId,
+      title: data.title,
+      description: data.description,
+      content: data.content,
+      url: data.url,
+      language: data.language,
+      tags: {
+        connectOrCreate: data.tags.map((name) => ({
+          where: { name },
+          create: { name },
+        })),
+      },
+    },
+    include: {
+      itemType: true,
+      tags: true,
+    },
+  });
+
+  return mapItem(item);
+}
+
 export interface UpdateItemData {
   title: string;
   description: string | null;

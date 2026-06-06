@@ -1,8 +1,8 @@
 'use client';
-import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Plus, PanelLeft, Search } from 'lucide-react';
+import { PanelLeft, Search } from 'lucide-react';
 import { useSidebar } from './SidebarContext';
+import { NewItemDialog } from './NewItemDialog';
 
 export function TopBar() {
   const { toggle, isMobileOpen, setMobileOpen } = useSidebar();
@@ -36,10 +36,7 @@ export function TopBar() {
         <Input placeholder="Search..." className="pl-9" />
       </div>
 
-      <Button>
-        <Plus className="h-4 w-4 mr-2" />
-        New Item
-      </Button>
+      <NewItemDialog />
     </header>
   );
 }
