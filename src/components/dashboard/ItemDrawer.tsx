@@ -20,6 +20,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Separator } from '@/components/ui/separator';
+import { CodeEditor } from '@/components/dashboard/CodeEditor';
 import { getTypeIcon } from '@/lib/icons';
 import { formatDate } from '@/lib/utils';
 import { updateItem, deleteItem } from '@/actions/items';
@@ -52,6 +53,7 @@ function toEditState(item: ItemDetail): EditState {
 
 const TEXT_TYPES = new Set(['snippet', 'prompt', 'command', 'note']);
 const LANGUAGE_TYPES = new Set(['snippet', 'command']);
+const CODE_TYPES = new Set(['snippet', 'command']);
 
 function DrawerSkeleton() {
   return (
@@ -131,6 +133,7 @@ export function ItemDrawer({ itemId, onClose }: ItemDrawerProps) {
   const typeName = item?.itemType.name ?? '';
   const showContent = TEXT_TYPES.has(typeName);
   const showLanguage = LANGUAGE_TYPES.has(typeName);
+  const showCodeEditor = CODE_TYPES.has(typeName);
   const showUrl = typeName === 'link';
 
   function handleCopy() {
@@ -375,12 +378,19 @@ export function ItemDrawer({ itemId, onClose }: ItemDrawerProps) {
               </section>
 
               {/* Content — text types only */}
-              {(showContent || (isEditing && showContent)) && (
+              {showContent && (
                 <section>
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">
                     Content
                   </p>
-                  {isEditing ? (
+                  {showCodeEditor ? (
+                    <CodeEditor
+                      value={isEditing ? form.content : (item.content ?? '')}
+                      onChange={(v) => setField('content', v)}
+                      language={isEditing ? form.language : (item.language ?? undefined)}
+                      readOnly={!isEditing}
+                    />
+                  ) : isEditing ? (
                     <Textarea
                       value={form.content}
                       onChange={(e) => setField('content', e.target.value)}
@@ -390,9 +400,7 @@ export function ItemDrawer({ itemId, onClose }: ItemDrawerProps) {
                     />
                   ) : (
                     item.content && (
-                      <pre className="text-xs bg-muted rounded-md p-3 overflow-x-auto whitespace-pre-wrap wrap-break-word">
-                        {item.content}
-                      </pre>
+                      <p className="text-sm text-foreground/90 whitespace-pre-wrap">{item.content}</p>
                     )
                   )}
                 </section>

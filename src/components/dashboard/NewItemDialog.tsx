@@ -16,6 +16,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import { CodeEditor } from '@/components/dashboard/CodeEditor';
 import { createItem } from '@/actions/items';
 
 const TYPES = [
@@ -30,6 +31,7 @@ type CreatableType = (typeof TYPES)[number]['name'];
 
 const TEXT_TYPES = new Set<CreatableType>(['snippet', 'prompt', 'command', 'note']);
 const LANGUAGE_TYPES = new Set<CreatableType>(['snippet', 'command']);
+const CODE_TYPES = new Set<CreatableType>(['snippet', 'command']);
 
 interface FormState {
   title: string;
@@ -58,6 +60,7 @@ export function NewItemDialog() {
 
   const showContent = TEXT_TYPES.has(selectedType);
   const showLanguage = LANGUAGE_TYPES.has(selectedType);
+  const showCodeEditor = CODE_TYPES.has(selectedType);
   const showUrl = selectedType === 'link';
 
   function setField<K extends keyof FormState>(key: K, value: FormState[K]) {
@@ -172,15 +175,23 @@ export function NewItemDialog() {
           {/* Content — text types */}
           {showContent && (
             <div className="space-y-1.5">
-              <Label htmlFor="new-item-content">Content</Label>
-              <Textarea
-                id="new-item-content"
-                value={form.content}
-                onChange={(e) => setField('content', e.target.value)}
-                placeholder="Content"
-                className="font-mono text-xs min-h-28"
-                rows={5}
-              />
+              <Label>Content</Label>
+              {showCodeEditor ? (
+                <CodeEditor
+                  value={form.content}
+                  onChange={(v) => setField('content', v)}
+                  language={form.language}
+                />
+              ) : (
+                <Textarea
+                  id="new-item-content"
+                  value={form.content}
+                  onChange={(e) => setField('content', e.target.value)}
+                  placeholder="Content"
+                  className="font-mono text-xs min-h-28"
+                  rows={5}
+                />
+              )}
             </div>
           )}
 
