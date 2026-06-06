@@ -1,29 +1,20 @@
-# Current Feature: Code Editor
+# Current Feature
 
 ## Feature
 
-Add Monaco Editor component for snippets and commands with copy button and macOS window styling.
+<!-- Describe the feature here -->
 
 ## Status
 
-In Progress
+Not Started
 
 ## Goals
 
-- Create `CodeEditor` component using Monaco Editor with dark theme
-- Replace Textarea with `CodeEditor` for snippet and command item types only
-- Keep Textarea for notes, prompts, and other non-code types
-- Add macOS-style window dots (red/yellow/green) at top of editor
-- Add a quick copy button in the editor header
-- Show the item language in the editor header next to the copy button
-- Support both display (readonly) and edit modes
-- Make editor height fluid with a max of 400px and a themed scrollbar
+<!-- Add goals here -->
 
 ## Notes
 
-- Only snippet and command types get the code editor — all other types continue using Textarea
-- The editor must work in both the item drawer view mode and inline edit mode
-- Monaco Editor package will need to be installed
+<!-- Add notes here -->
 
 ## History
 
@@ -52,3 +43,4 @@ In Progress
 - **2026-06-05** — Item Drawer Edit Mode: Edit button toggles inline edit mode in the same drawer; Save calls updateItem server action (Zod validation, ownership check, { success, data, error } return); Cancel discards; editable fields: title/description/tags for all types, content for text types, language for snippet/command, url for link; non-editable: item type, collections, dates; updateItem query in src/lib/db/items.ts handles tag disconnect/connect-or-create; router.refresh() syncs card list; zod@4 installed; ShadCN textarea added; 10 unit tests
 - **2026-06-06** — Item Delete: Delete button in item drawer opens ShadCN AlertDialog confirmation; confirming calls deleteItem server action (ownership check, Prisma delete); on success closes drawer, shows Sonner success toast, router.refresh(); on error shows Sonner error toast; 5 unit tests for deleteItem action
 - **2026-06-06** — Item Create: "New Item" button in TopBar opens ShadCN Dialog (NewItemDialog); type-pill selector for snippet/prompt/command/note/link; dynamic fields per type (all: title+description+tags, text types: content, snippet/command: language, link: URL required); createItem server action with Zod validation and userId from session; createItem DB query in src/lib/db/items.ts; on success: Sonner toast + close dialog + router.refresh(); on error: Sonner error toast; 7 unit tests
+- **2026-06-06** — Code Editor: installed @monaco-editor/react; created CodeEditor component (src/components/dashboard/CodeEditor.tsx) with vs-dark theme, macOS window dots (red/yellow/green), language label, and copy-to-clipboard button in header; fluid height up to 400px with themed scrollbar; snippet and command types use CodeEditor in both view (readonly) and edit modes in ItemDrawer and NewItemDialog; prompt/note/link types retain plain Textarea
