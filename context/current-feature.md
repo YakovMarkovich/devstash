@@ -1,34 +1,20 @@
-# Current Feature: Markdown Editor
+# Current Feature
 
 ## Feature
 
-Add a Markdown editor component with Write/Preview tabs for notes and prompts, replacing plain Textarea in NewItemDialog and ItemDrawer.
+<!-- Describe the feature here -->
 
 ## Status
 
-In Progress
+Not Started
 
 ## Goals
 
-- Create `MarkdownEditor` component with tabbed Write/Preview interface
-- Replace Textarea with MarkdownEditor for note and prompt types only (keep CodeEditor for snippet/command)
-- Use `react-markdown` + `remark-gfm` for GitHub Flavored Markdown rendering
-- Match existing dark theme styling (bg-[#1e1e1e] container, bg-[#2d2d2d] header)
-- Add copy button in header, same style as CodeEditor
-- Support readonly mode (Preview tab only) and edit mode (Write tab default, Preview available)
-- Style markdown output: headings, code blocks, inline code, lists, blockquotes, links, tables
-- Use custom `.markdown-preview` CSS class for reliable dark mode styling
-- Fluid height up to 400px, matching CodeEditor behavior
-- Integrate into NewItemDialog (note/prompt content field)
-- Integrate into ItemDrawer edit mode (note/prompt content field)
-- Integrate into ItemDrawer view mode (readonly, note/prompt content)
+<!-- Add goals here -->
 
 ## Notes
 
-- Only note and prompt types get MarkdownEditor — snippet and command keep CodeEditor unchanged
-- In readonly mode, only the Preview tab is shown (no Write tab)
-- In edit mode, default to Write tab with Preview tab available
-- Use custom CSS class `.markdown-preview` rather than relying on Tailwind prose for consistent dark theme
+<!-- Add notes here -->
 
 ## History
 
@@ -58,3 +44,4 @@ In Progress
 - **2026-06-06** — Item Delete: Delete button in item drawer opens ShadCN AlertDialog confirmation; confirming calls deleteItem server action (ownership check, Prisma delete); on success closes drawer, shows Sonner success toast, router.refresh(); on error shows Sonner error toast; 5 unit tests for deleteItem action
 - **2026-06-06** — Item Create: "New Item" button in TopBar opens ShadCN Dialog (NewItemDialog); type-pill selector for snippet/prompt/command/note/link; dynamic fields per type (all: title+description+tags, text types: content, snippet/command: language, link: URL required); createItem server action with Zod validation and userId from session; createItem DB query in src/lib/db/items.ts; on success: Sonner toast + close dialog + router.refresh(); on error: Sonner error toast; 7 unit tests
 - **2026-06-06** — Code Editor: installed @monaco-editor/react; created CodeEditor component (src/components/dashboard/CodeEditor.tsx) with vs-dark theme, macOS window dots (red/yellow/green), language label, and copy-to-clipboard button in header; fluid height up to 400px with themed scrollbar; snippet and command types use CodeEditor in both view (readonly) and edit modes in ItemDrawer and NewItemDialog; prompt/note/link types retain plain Textarea
+- **2026-06-06** — Markdown Editor: installed react-markdown + remark-gfm; created MarkdownEditor component (src/components/dashboard/MarkdownEditor.tsx) with Write/Preview tabs, dark theme matching CodeEditor (bg-[#1e1e1e]/bg-[#2d2d2d] header), copy button; readonly mode shows Preview tab only; custom .markdown-preview CSS class in globals.css for headings, code blocks, inline code, lists, blockquotes, links, tables; prompt and note types use MarkdownEditor in NewItemDialog and ItemDrawer (view + edit modes); snippet and command keep CodeEditor unchanged
