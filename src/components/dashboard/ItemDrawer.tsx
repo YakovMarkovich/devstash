@@ -21,6 +21,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Separator } from '@/components/ui/separator';
 import { CodeEditor } from '@/components/dashboard/CodeEditor';
+import { MarkdownEditor } from '@/components/dashboard/MarkdownEditor';
 import { getTypeIcon } from '@/lib/icons';
 import { formatDate } from '@/lib/utils';
 import { updateItem, deleteItem } from '@/actions/items';
@@ -54,6 +55,7 @@ function toEditState(item: ItemDetail): EditState {
 const TEXT_TYPES = new Set(['snippet', 'prompt', 'command', 'note']);
 const LANGUAGE_TYPES = new Set(['snippet', 'command']);
 const CODE_TYPES = new Set(['snippet', 'command']);
+const MARKDOWN_TYPES = new Set(['prompt', 'note']);
 
 function DrawerSkeleton() {
   return (
@@ -134,6 +136,7 @@ export function ItemDrawer({ itemId, onClose }: ItemDrawerProps) {
   const showContent = TEXT_TYPES.has(typeName);
   const showLanguage = LANGUAGE_TYPES.has(typeName);
   const showCodeEditor = CODE_TYPES.has(typeName);
+  const showMarkdownEditor = MARKDOWN_TYPES.has(typeName);
   const showUrl = typeName === 'link';
 
   function handleCopy() {
@@ -390,13 +393,11 @@ export function ItemDrawer({ itemId, onClose }: ItemDrawerProps) {
                       language={isEditing ? form.language : (item.language ?? undefined)}
                       readOnly={!isEditing}
                     />
-                  ) : isEditing ? (
-                    <Textarea
-                      value={form.content}
-                      onChange={(e) => setField('content', e.target.value)}
-                      placeholder="Content"
-                      className="font-mono text-xs min-h-32"
-                      rows={6}
+                  ) : showMarkdownEditor ? (
+                    <MarkdownEditor
+                      value={isEditing ? form.content : (item.content ?? '')}
+                      onChange={(v) => setField('content', v)}
+                      readOnly={!isEditing}
                     />
                   ) : (
                     item.content && (

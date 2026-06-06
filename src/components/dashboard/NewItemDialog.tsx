@@ -17,6 +17,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { CodeEditor } from '@/components/dashboard/CodeEditor';
+import { MarkdownEditor } from '@/components/dashboard/MarkdownEditor';
 import { createItem } from '@/actions/items';
 
 const TYPES = [
@@ -32,6 +33,7 @@ type CreatableType = (typeof TYPES)[number]['name'];
 const TEXT_TYPES = new Set<CreatableType>(['snippet', 'prompt', 'command', 'note']);
 const LANGUAGE_TYPES = new Set<CreatableType>(['snippet', 'command']);
 const CODE_TYPES = new Set<CreatableType>(['snippet', 'command']);
+const MARKDOWN_TYPES = new Set<CreatableType>(['prompt', 'note']);
 
 interface FormState {
   title: string;
@@ -61,6 +63,7 @@ export function NewItemDialog() {
   const showContent = TEXT_TYPES.has(selectedType);
   const showLanguage = LANGUAGE_TYPES.has(selectedType);
   const showCodeEditor = CODE_TYPES.has(selectedType);
+  const showMarkdownEditor = MARKDOWN_TYPES.has(selectedType);
   const showUrl = selectedType === 'link';
 
   function setField<K extends keyof FormState>(key: K, value: FormState[K]) {
@@ -181,6 +184,11 @@ export function NewItemDialog() {
                   value={form.content}
                   onChange={(v) => setField('content', v)}
                   language={form.language}
+                />
+              ) : showMarkdownEditor ? (
+                <MarkdownEditor
+                  value={form.content}
+                  onChange={(v) => setField('content', v)}
                 />
               ) : (
                 <Textarea
